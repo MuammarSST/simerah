@@ -25,7 +25,7 @@ if (!$result_laporan) {
         </div>
         <div class="table col col-auto border p-4 shadow rounded">
             <table id="myTable" class="table table-striped table-bordered table-hover table-sm" data-page-length="25">
-                <thead class="table-primary text-center">
+                <thead class="table-success text-center">
                     <tr>
                         <th class="text-center" scope="col">No</th>
                         <th class="text-center" scope="col">Nama Paket</th>

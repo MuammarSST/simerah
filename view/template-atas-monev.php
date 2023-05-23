@@ -3,7 +3,8 @@
 <html lang="en">
 
 <?php
-  require_once('../view/header.php');
+session_start();
+require_once('../view/header.php');
 
 ?>
 
@@ -22,36 +23,14 @@
             <p>Dashboard</p>
           </a>
         </li>
-        <!-- <li class="nav-item ">
-          <a class="nav-link" href="./user.html">
-            <i class="material-icons">book</i>
-            <p>Program dan Kegiatan</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="./tables.html">
-            <i class="material-icons">content_paste</i>
-            <p>Realisasi dan Capaian</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="./typography.html">
-            <i class="material-icons">library_books</i>
-            <p>RFK Dinas</p>
-          </a>
-        </li> -->
+
         <li class="nav-item ">
           <a class="nav-link" href="./monev.php">
             <i class="material-icons">bubble_chart</i>
             <p>Monev Lapangan</p>
           </a>
         </li>
-        <!-- <li class="nav-item ">
-          <a class="nav-link" href="./icons.html">
-            <i class="material-icons">print</i>
-            <p>Laporan</p>
-          </a>
-        </li> -->
+
         
       </ul>
     </div>
@@ -71,10 +50,8 @@
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">person</i>
-                  <p class="d-lg-none d-md-block">
-                    Account
-                  </p>
+                  <i class="material-icons">person </i><?php print($_SESSION['level']) ?>
+
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
                   <a class="dropdown-item" href="#">Profile</a>

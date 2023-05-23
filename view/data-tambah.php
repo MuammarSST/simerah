@@ -19,7 +19,7 @@ require('../view/template-atas-monev.php')
             <span class=""><a href="index">Beranda </a></span>
             <span class="text-grey"> / Tambah data hasil monev</span>
         </div>
-        <form action="proses/simpan_tambah.php" method="POST" enctype="multipart/form-data">
+        <form action="../proses/simpan_tambah.php" method="POST" enctype="multipart/form-data">
             <div class="card shadow">
 
                 <div class="card">
@@ -411,8 +411,8 @@ require('../view/template-atas-monev.php')
                     </div>
                 </div>
                 <div class="d-flex justify-content-end mb-4 mx-4">
-                    <a href="data-lihat" class="btn btn-danger mx-2"><i class="fa fa-reply"></i>  Batal </a>
-                    <button type="submit" class="btn btn-success px-4"><i class="fa fa-save"></i> Simpan</button>
+                    <a href="./monev.php" class="btn btn-danger mx-2"><i class="fa fa-reply"></i>  Batal </a>
+                    <button type="submit" name="submit"  class="btn btn-success px-4"><i class="fa fa-save"></i> Simpan</button>
                 </div>
             </div>
         </form>
