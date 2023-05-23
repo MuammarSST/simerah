@@ -20,22 +20,38 @@ if (!$result_laporan) {
             <span class=""><a href="./admin-monev-dashboard.php">Beranda </a></span>
             <span class="text-grey"> / Data hasil monev</span>
         </div>
-        <div class="mb-4">
-            <a href="data-tambah.php" class="btn btn-custom shadow"> <i class="fa fa-plus"></i></button> Tambah Data</a>
-        </div>
-        <div class="table col col-auto border p-4 shadow rounded">
-            <table id="myTable" class="table table-striped table-bordered table-hover table-sm" data-page-length="25">
-                <thead class="table-success text-center">
-                    <tr>
-                        <th class="text-center" scope="col">No</th>
-                        <th class="text-center" scope="col">Nama Paket</th>
-                        <th class="text-center" scope="col">Alamat Paket</th>
-                        <th class="text-center" scope="col">Latitude</th>
-                        <th class="text-center" scope="col">Longitude</th>
-                        <th class="text-center" scope="col">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
+        
+        <a href="data-tambah.php" class="btn btn-primary shadow"> <i class="fa fa-plus"></i></button> Tambah Data</a>
+     
+        <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title "> Data hasil monev</h4>
+                  <p class="card-category"> </p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <tr><th>
+                        No
+                        </th>
+                        <th>
+                        Nama Paket
+                        </th>
+                        <th>
+                        Alamat Paket
+                        </th>
+                        <th>
+                        Aksi
+                        </th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
                     <?php 
 				$i=0;
                 $noUrut=1;
@@ -51,41 +67,85 @@ if (!$result_laporan) {
                         <th class="text-center" scope="row"><?php echo $noUrut++ ?></th>
                         <td><?php echo $nama_peta ?></td>
                         <td><?php echo $alamat_peta ?></td>
-                        <td><?php echo $lat ?></td>
-                        <td><?php echo $long ?></td>
-                        <td class="d-flex mr-2 justify-content-center">
-                            <form method="POST" action="data-rincian.php" class="mx-1">
+
+                        <td>
+
+                        <div class="nav-items">
+                            <a class="btn btn-primary" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bars"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <form method="POST" action="data-rincian.php">
+                                    <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
+                                    <button type="submit" name="edit_paket"
+                                        class="btn btn-warning btn-lg btn-block" title="Rincian Data">
+                                        <i class="fa fa-progres"></i> Progres 0%
+                                    </button>
+                                </form>
+                                <form method="POST" action="data-rincian.php">
+                                    <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
+                                    <button type="submit" name="edit_paket"
+                                        class="btn btn-info btn-lg btn-block" title="Rincian Data">
+                                        <i class="fa fa-list-check"></i> Progres 50%
+                                    </button>
+                                </form>
+                                <form method="POST" action="data-rincian.php">
+                                    <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
+                                    <button type="submit" name="edit_paket"
+                                        class="btn btn-success btn-lg btn-block" title="Progres 100%">
+                                        <i class="fa fa-list-check"></i> Progres 100%
+                                    </button>
+                                </form>
+
+                                <div class="dropdown-divider"></div>
+
+                                <form method="POST" action="data-rincian.php">
+                                    <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
+                                    <button type="submit" name="edit_paket"
+                                        class="btn btn-info btn-lg btn-block" title="Rincian Data">
+                                        <i class="fa fa-book"></i> Rincian
+                                    </button>
+                                </form>
+                            
+                       
+                            <form method="POST" action="data-edit.php" >
                                 <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
-                                <button type="submit" name="edit_paket"
-                                    class="btn btn-sm btn-info" title="Rincian Data">
-                                    <i class="fa fa-book"></i>
-                                </button>
+                                <button type="submit" name="edit_paket" value="Edit Data" class="btn btn-danger btn-lg btn-block">
+                                <i class="fa fa-edit"></i> Edit</button>
                             </form>
-                            <form method="POST" action="data-edit.php" class="mx-1">
+                            <form method="POST" action="foto_upload" >
                                 <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
-                                <button type="submit" name="edit_paket" value="Edit Data" class="btn btn-sm btn-danger">
-                                <i class="fa fa-edit"></i></button>
+                                <button type="submit" name="edit_paket" class="btn btn-primary btn-lg btn-block"
+                                    title="Upload Foto"><i class="fa fa-upload"></i> upload</button>
                             </form>
-                            <form method="POST" action="foto_upload" class="mx-1">
-                                <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
-                                <button type="submit" name="edit_paket" class="btn btn-sm btn-primary bi bi-upload mr-2"
-                                    title="Upload Foto"><i class="fa fa-upload"></i> </button>
-                            </form>
-                            <form method="POST" target="_blank" action="lihat_peta.php" class="mx-1">
+                            <form method="POST" target="_blank" action="lihat_peta.php">
                                 <input type="hidden" name="latitude" value="<?php echo $lat ?>">
                                 <input type="hidden" name="longitude" value="<?php echo $long ?>">
                                 <button type="submit" name="submit_coordinates"
-                                    class="btn btn-sm btn-success bi bi-map mr-2" title="Lihat Peta"> 
-                                    <i class="fa fa-map"></i></button></button>
+                                    class="btn btn-success btn-lg btn-block" title="Lihat Peta"> 
+                                    <i class="fa fa-map"></i> peta</button>
                             </form>
+
+                            </div>
+                        </div>
+                            
                         </td>
                     </tr>
                     <?php 
 					}
 				?>
                 </tbody>
-            </table>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+ 
+          </div>
         </div>
+      </div>
+
+
     </div>
 
  
