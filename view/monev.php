@@ -35,7 +35,7 @@ if (!$result_laporan) {
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table">
-                      <thead class=" text-primary">
+                      <thead class="text-primary">
                         <tr><th>
                         No
                         </th>
@@ -69,7 +69,32 @@ if (!$result_laporan) {
                         <td><?php echo $alamat_peta ?></td>
 
                         <td>
-
+                        <form method="POST" action="data-rincian.php">
+                                    <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
+                                    <button type="submit" name="edit_paket"
+                                        class="btn btn-info " title="Rincian Data">
+                                        <i class="fa fa-book"></i>
+                                    </button>
+                                </form>
+                            
+                       
+                            <form method="POST" action="data-edit.php" >
+                                <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
+                                <button type="submit" name="edit_paket" value="Edit Data" class="btn btn-danger">
+                                <i class="fa fa-edit"></i> </button>
+                            </form>
+                            <form method="POST" action="foto_upload" >
+                                <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
+                                <button type="submit" name="edit_paket" class="btn btn-warning"
+                                    title="Upload Foto"><i class="fa fa-upload"></i> </button>
+                            </form>
+                            <form method="POST" target="_blank" action="lihat_peta.php">
+                                <input type="hidden" name="latitude" value="<?php echo $lat ?>">
+                                <input type="hidden" name="longitude" value="<?php echo $long ?>">
+                                <button type="submit" name="submit_coordinates"
+                                    class="btn btn-success" title="Lihat Peta"> 
+                                    <i class="fa fa-map"></i> </button>
+                            </form>
                         <div class="nav-items">
                             <a class="btn btn-primary" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-bars"></i>
@@ -79,52 +104,27 @@ if (!$result_laporan) {
                                     <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
                                     <button type="submit" name="edit_paket"
                                         class="btn btn-warning btn-lg btn-block" title="Rincian Data">
-                                        <i class="fa fa-progres"></i> Progres 0%
+                                        <i class="fa fa-circle-o-notch"></i> Progres 0%
                                     </button>
                                 </form>
                                 <form method="POST" action="data-rincian.php">
                                     <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
                                     <button type="submit" name="edit_paket"
                                         class="btn btn-info btn-lg btn-block" title="Rincian Data">
-                                        <i class="fa fa-list-check"></i> Progres 50%
+                                        <i class="fa fa-spinner"></i> Progres 50%
                                     </button>
                                 </form>
                                 <form method="POST" action="data-rincian.php">
                                     <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
                                     <button type="submit" name="edit_paket"
                                         class="btn btn-success btn-lg btn-block" title="Progres 100%">
-                                        <i class="fa fa-list-check"></i> Progres 100%
+                                        <i class="fa fa-check-square"></i> Progres 100%
                                     </button>
                                 </form>
 
-                                <div class="dropdown-divider"></div>
+                               
 
-                                <form method="POST" action="data-rincian.php">
-                                    <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
-                                    <button type="submit" name="edit_paket"
-                                        class="btn btn-info btn-lg btn-block" title="Rincian Data">
-                                        <i class="fa fa-book"></i> Rincian
-                                    </button>
-                                </form>
-                            
-                       
-                            <form method="POST" action="data-edit.php" >
-                                <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
-                                <button type="submit" name="edit_paket" value="Edit Data" class="btn btn-danger btn-lg btn-block">
-                                <i class="fa fa-edit"></i> Edit</button>
-                            </form>
-                            <form method="POST" action="foto_upload" >
-                                <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
-                                <button type="submit" name="edit_paket" class="btn btn-primary btn-lg btn-block"
-                                    title="Upload Foto"><i class="fa fa-upload"></i> upload</button>
-                            </form>
-                            <form method="POST" target="_blank" action="lihat_peta.php">
-                                <input type="hidden" name="latitude" value="<?php echo $lat ?>">
-                                <input type="hidden" name="longitude" value="<?php echo $long ?>">
-                                <button type="submit" name="submit_coordinates"
-                                    class="btn btn-success btn-lg btn-block" title="Lihat Peta"> 
-                                    <i class="fa fa-map"></i> peta</button>
-                            </form>
+                                
 
                             </div>
                         </div>
