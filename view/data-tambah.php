@@ -23,8 +23,8 @@ require('../view/template-atas-monev.php')
             <div class="card shadow">
 
                 <div class="card">
-                    <div class="card-header bg-info">
-                        DATA PAKET
+                    <div class="card-header card-header-primary">
+                       <h4 class="card-title "> DATA PAKET </h4>
                     </div>
                     <div class="card-body">
                         <div class="col-12">
@@ -46,7 +46,7 @@ require('../view/template-atas-monev.php')
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header bg-info">
+                    <div class="card-header card-header-primary">
                         SKPK
                     </div>
                     <div class="card-body">
@@ -82,7 +82,7 @@ require('../view/template-atas-monev.php')
                 </div>
 
                 <div class="card">
-                    <div class="card-header bg-info">
+                    <div class="card-header card-header-primary">
                         PENGELOLA ANGGARAN SKPK
                     </div>
                     <div class="card-body">
@@ -102,7 +102,7 @@ require('../view/template-atas-monev.php')
                 </div>
 
                 <div class="card">
-                    <div class="card-header bg-info">
+                    <div class="card-header card-header-primary">
                         PENGELOLA TEKNIS
                     </div>
                     <div class="card-body">
@@ -171,7 +171,7 @@ require('../view/template-atas-monev.php')
                 </div>
 
                 <div class="card">
-                    <div class="card-header bg-info">
+                    <div class="card-header card-header-primary">
                         PENGGUNA / PENERIMA
                     </div>
                     <div class="card-body">
@@ -193,7 +193,7 @@ require('../view/template-atas-monev.php')
 
 
                 <div class="card">
-                    <div class="card-header bg-info">
+                    <div class="card-header card-header-primary">
                         TIM PROVISIONAL HAND OVER (PHO)
                     </div>
                     <div class="card-body">
@@ -272,7 +272,7 @@ require('../view/template-atas-monev.php')
 
 
                 <div class="card">
-                    <div class="card-header bg-info">
+                    <div class="card-header card-header-primary">
                         PERENCANAAN
                     </div>
                     <div class="card-body">
@@ -304,8 +304,8 @@ require('../view/template-atas-monev.php')
                     </div>
                 </div>
 
-                <div class=""card">
-                    <div class="card-header bg-info">
+                <div class="card">
+                    <div class="card-header card-header-primary">
                         PENGAWASAN
                     </div>
                     <div class="card-body">
@@ -338,8 +338,8 @@ require('../view/template-atas-monev.php')
                 </div>
 
 
-                <div class=""card">
-                    <div class="card-header bg-info">
+                <div class="card">
+                    <div class="card-header card-header-primary">
                         PELAKSANA FISIK
                     </div>
                     <div class="card-body">
@@ -384,7 +384,7 @@ require('../view/template-atas-monev.php')
                 </div>
 
                 <div class="card">
-                    <div class="card-header bg-info">
+                    <div class="card-header card-header-primary">
                         PROVISIONAL HAND OVER (PHO)
                     </div>
                     <div class="card-body">
@@ -401,7 +401,7 @@ require('../view/template-atas-monev.php')
                 </div>
 
                 <div class="card">
-                    <div class="card-header bg-info">
+                    <div class="card-header card-header-primary">
                         Hasil Akhir / Sementara
                     </div>
                     <div class="card-body">

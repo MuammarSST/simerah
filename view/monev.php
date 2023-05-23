@@ -43,7 +43,7 @@ if (!$result_laporan) {
                         Nama Paket
                         </th>
                         <th>
-                        Alamat Paket
+                        Alamat
                         </th>
                         <th>
                         Aksi
@@ -68,7 +68,10 @@ if (!$result_laporan) {
                         <td><?php echo $nama_peta ?></td>
                         <td><?php echo $alamat_peta ?></td>
 
-                        <td>
+                        <td class="footer">
+                        
+
+                        
                         <form method="POST" action="data-rincian.php">
                                     <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
                                     <button type="submit" name="edit_paket"
@@ -95,6 +98,7 @@ if (!$result_laporan) {
                                     class="btn btn-success" title="Lihat Peta"> 
                                     <i class="fa fa-map"></i> </button>
                             </form>
+                        
                         <div class="nav-items">
                             <a class="btn btn-primary" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-bars"></i>
