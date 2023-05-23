@@ -449,7 +449,7 @@ $row = mysqli_fetch_array($result);
                     </div>
                     <div class="d-flex justify-content-end mb-4 mx-4">
                         <a href="./monev.php" class="btn btn-danger mx-2"><i class="fa fa-reply"></i> Kembali </a>
-                        <button type="submit" class="btn btn-success px-4"><i class="fa fa-save"></i> Simpan</button>
+                        <button type="submit" name="submit" class="btn btn-success px-4"><i class="fa fa-save"></i> Simpan</button>
                     </div>
                 </div>
             </form>

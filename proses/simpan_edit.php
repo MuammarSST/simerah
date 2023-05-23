@@ -1,9 +1,9 @@
-<!-- <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.8/dist/sweetalert2.all.min.js"></script>
 </head>
-</html> -->
+</html>
 
 <?php
     
@@ -144,25 +144,25 @@ if(isset($_POST['submit'])){
         ha =  '$ha'
         
     WHERE id_paket = '$id_paket'";
-    var_dump($query);
-    // $result = mysqli_query($koneksi,$query);
-    // if (!$result) {
-    // die('Invalid query: '  .$mysqli->error);
-    // }
+    // var_dump($query);
+    $result = mysqli_query($koneksi,$query);
+    if (!$result) {
+    die('Invalid query: '  .$mysqli->error);
+    }
 
-    // if($result){
-    //     echo "<script>
-    //     Swal.fire({
-    //        position: 'center',
-    //        icon: 'success',
-    //        title: 'Data berhasil diedit',
-    //        showConfirmButton: false,
-    //        timer: 1500
-    //      }).then((result) => {
-    //        window.location = '../view/monev.php';
-    //      });
+    if($result){
+        echo "<script>
+        Swal.fire({
+           position: 'center',
+           icon: 'success',
+           title: 'Data berhasil diedit',
+           showConfirmButton: false,
+           timer: 1500
+         }).then((result) => {
+           window.location = '../view/monev.php';
+         });
          
-    //     </script>";
-    // }
+        </script>";
+    }
 }
 ?>

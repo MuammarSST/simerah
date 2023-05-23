@@ -33,9 +33,10 @@
               <div class="card">
                 <div class="card-header card-header-danger">
                   <h4 class="card-title">Login</h4>
-                  <p class="card-category">SIlahkan Masukan Username dan Password</p>
+                  <p class="card-category">Silahkan Masukan Username dan Password</p>
                 </div>
                 <div class="card-body">
+                  
                   <form method="POST" action="../proses/cek_login.php">
                     <div class="row">
 

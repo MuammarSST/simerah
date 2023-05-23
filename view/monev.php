@@ -21,7 +21,7 @@ if (!$result_laporan) {
             <span class="text-grey"> / Data hasil monev</span>
         </div>
         <div class="mb-4">
-            <a href="data-tambah" class="btn btn-custom shadow"> <i class="fa fa-plus"></i></button> Tambah Data</a>
+            <a href="data-tambah.php" class="btn btn-custom shadow"> <i class="fa fa-plus"></i></button> Tambah Data</a>
         </div>
         <div class="table col col-auto border p-4 shadow rounded">
             <table id="myTable" class="table table-striped table-bordered table-hover table-sm" data-page-length="25">
