@@ -55,7 +55,7 @@
                     
                     
                     </div>
-                    <button type="submit" class="btn btn-danger pull-right">Login</button>
+                    <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-send"></i> Login</button>
                     <div class="clearfix"></div>
                   </form>
                   <footer class="footer">

@@ -21,7 +21,7 @@ if (!$result_laporan) {
             <span class="text-grey"> / Data hasil monev</span>
         </div>
         <div class="mb-4">
-            <a href="data-tambah" class="bi bi-bookmark-plus btn btn-custom shadow">&nbsp;Tambah Data</a>
+            <a href="data-tambah" class="btn btn-custom shadow"> <i class="fa fa-plus"></i></button> Tambah Data</a>
         </div>
         <div class="table col col-auto border p-4 shadow rounded">
             <table id="myTable" class="table table-striped table-bordered table-hover table-sm" data-page-length="25">
@@ -54,27 +54,29 @@ if (!$result_laporan) {
                         <td><?php echo $lat ?></td>
                         <td><?php echo $long ?></td>
                         <td class="d-flex mr-2 justify-content-center">
-                            <form method="POST" action="data-rincian" class="mx-1">
+                            <form method="POST" action="data-rincian.php" class="mx-1">
                                 <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
                                 <button type="submit" name="edit_paket"
-                                    class="btn btn-sm btn-info bi bi-ticket-detailed mr-2" title="Rincian Data">
+                                    class="btn btn-sm btn-info" title="Rincian Data">
+                                    <i class="fa fa-book"></i>
                                 </button>
                             </form>
-                            <form method="POST" action="data-edit" class="mx-1">
+                            <form method="POST" action="data-edit.php" class="mx-1">
                                 <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
-                                <button type="submit" name="edit_paket" value="Edit Data"
-                                    class="btn btn-sm btn-warning bi bi-pencil mr-2" title="Edit Data"></button>
+                                <button type="submit" name="edit_paket" value="Edit Data" class="btn btn-sm btn-danger">
+                                <i class="fa fa-edit"></i></button>
                             </form>
                             <form method="POST" action="foto_upload" class="mx-1">
                                 <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
                                 <button type="submit" name="edit_paket" class="btn btn-sm btn-primary bi bi-upload mr-2"
-                                    title="Upload Foto"> </button>
+                                    title="Upload Foto"><i class="fa fa-upload"></i> </button>
                             </form>
-                            <form method="POST" target="_blank" action="lihat_peta" class="mx-1">
+                            <form method="POST" target="_blank" action="lihat_peta.php" class="mx-1">
                                 <input type="hidden" name="latitude" value="<?php echo $lat ?>">
                                 <input type="hidden" name="longitude" value="<?php echo $long ?>">
                                 <button type="submit" name="submit_coordinates"
-                                    class="btn btn-sm btn-success bi bi-map mr-2" title="Lihat Peta"> </button>
+                                    class="btn btn-sm btn-success bi bi-map mr-2" title="Lihat Peta"> 
+                                    <i class="fa fa-map"></i></button></button>
                             </form>
                         </td>
                     </tr>
