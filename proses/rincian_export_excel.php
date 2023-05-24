@@ -1,4 +1,7 @@
 <?php
+
+
+
 require('../proses/koneksi.php');
 
 $post_id_paket = $_POST['id_paket'];
@@ -6,79 +9,12 @@ $query = "SELECT laporan.*, skpk.nama_skpk FROM laporan  INNER JOIN skpk ON lapo
 $result = mysqli_query($koneksi,$query);
 $row = mysqli_fetch_array($result);
 
+
+header("Content-type: application/vnd-ms-excel");
+header("Content-Disposition: attachment; filename=Data Tepra.xls");
 ?>
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
-    <script>
-        function ExportToExcel(type, fn, dl) {
-       var elt = document.getElementById('container_content');
-       var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
-       return dl ?
-         XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }):
-         XLSX.writeFile(wb, fn || ('LAPORAN.' + (type || 'xlsx')));
-    }
-    </script>
-    <script>
-    function generatePDF() {
-        const element = document.getElementById('container_content');
-        var opt = {
-            margin: 0.1,
-            filename: '<?php echo $row['nama_skpk'];?> - <?php echo $row['nama_paket']; ?>.pdf',
-          
-            jsPDF: {
-                unit: 'cm',
-                format: 'a3',
-                orientation: 'landscape'
-            }
-        };
-        html2pdf().set(opt).from(element).save();
-    }
-
-
-    </script>
-</head>
-
-<body>
-    <?php
-include 'header.php';
-?>
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                </div>
-                <div class="d-flex justify-content-center">
-                    <a href="./monev.php" class="btn btn-danger mx-2 bi bi-arrow-left"><i class="fa fa-reply"></i> Kembali </a>
-                    <button class="btn btn-primary" onclick="generatePDF()">
-                          <i class="fa fa-download"></i> Download PDF 
-                    </button>
-                    <button  class="btn btn-success" onclick="ExportToExcel('xlsx')">
-                    <i class="fa fa-file-excel-o"></i> Dowload Excel (masih error)
-                </button>
-                <form method="POST" action="../proses/rincian_export_excel.php" >
-					<input type="hidden" name="id_paket" value="<?php echo $post_id_paket ?>">
-					<input type="submit" name="export_excel" value="export excel (masih error)" class ="btn btn-success">
-				</form>
-                </div>
-                <div class="col-sm">
-                </div>
-            </div>
-        </div>
-
-        <br>
-
-     
-            <table class="table table-bordered" id="container_content">
+<table class="table table-bordered" id="container_content">
                 <thead>
                     <tr class="text-center">
                         <th scope="col" style="background: #B4C6E7;">KONSTRUKSI</th>
@@ -398,17 +334,3 @@ include 'header.php';
 
                 </tbody>
             </table>
-      
-    </main>
-    <?php
-include 'footer.php';
-?>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-    </script>
-
-
-</body>
-
-</html>

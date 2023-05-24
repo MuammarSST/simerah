@@ -16,7 +16,7 @@ require('../view/template-atas-monev.php')
             <h3 class="text-gray-800 my-2">Tambah Data Hasil Monev</h3>
         </div>
         <div class="subtitle border-bottom mb-4 pb-2">
-            <span class=""><a href="index">Beranda </a></span>
+            <span class=""><a href="../view/monev.php">Monev </a></span>
             <span class="text-grey"> / Tambah data hasil monev</span>
         </div>
         <form action="../proses/simpan_tambah.php" method="POST" enctype="multipart/form-data">

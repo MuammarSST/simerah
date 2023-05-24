@@ -25,7 +25,7 @@ $row = mysqli_fetch_array($result);
 
                     <input type="hidden" name="id_paket" id="id_paket" value="<?php echo $row['id_paket']; ?>">
                     <div class="card">
-                        <div class="card-header bg-info">
+                        <div class="card-header card-header-danger">
                             DATA PAKET
                         </div>
                         <div class="card">
@@ -55,7 +55,7 @@ $row = mysqli_fetch_array($result);
                     </div>
 
                     <div class="card">
-                        <div class="card-header bg-info">
+                    <div class="card-header card-header-danger">
                             SKPK
                         </div>
                         <div class="card-body">
@@ -97,7 +97,7 @@ $row = mysqli_fetch_array($result);
                     </div>
 
                     <div class="card">
-                        <div class="card-header bg-info">
+                    <div class="card-header card-header-danger">
                             PENGELOLA ANGGARAN SKPK
                         </div>
                         <div class="card-body">
@@ -120,7 +120,7 @@ $row = mysqli_fetch_array($result);
                     </div>
 
                     <div class="card">
-                        <div class="card-header bg-info">
+                    <div class="card-header card-header-danger">
                             PENGELOLA TEKNIS
                         </div>
                         <div class="card-body">
@@ -189,7 +189,7 @@ $row = mysqli_fetch_array($result);
                     </div>
 
                     <div class="card">
-                        <div class="card-header bg-info">
+                    <div class="card-header card-header-danger">
                             PENGGUNA / PENERIMA
                         </div>
                         <div class="card-body">
@@ -214,7 +214,7 @@ $row = mysqli_fetch_array($result);
 
 
                     <div class="card">
-                        <div class="card-header bg-info">
+                    <div class="card-header card-header-danger">
                             TIM PROVISIONAL HAND OVER (PHO)
                         </div>
                         <div class="card-body">
@@ -293,7 +293,7 @@ $row = mysqli_fetch_array($result);
 
 
                     <div class="card">
-                        <div class="card-header bg-info">
+                    <div class="card-header card-header-danger">
                             PERENCANAAN
                         </div>
                         <div class="card-body">
@@ -329,7 +329,7 @@ $row = mysqli_fetch_array($result);
                     </div>
 
                     <div class="card">
-                        <div class="card-header bg-info">
+                    <div class="card-header card-header-danger">
                             PENGAWASAN
                         </div>
                         <div class="card-body">
@@ -366,7 +366,7 @@ $row = mysqli_fetch_array($result);
 
 
                     <div class="card">
-                        <div class="card-header bg-info">
+                    <div class="card-header card-header-danger">
                             PELAKSANA FISIK
                         </div>
                         <div class="card-body">
@@ -416,7 +416,7 @@ $row = mysqli_fetch_array($result);
                     </div>
 
                     <div class="card">
-                        <div class="card-header bg-info">
+                    <div class="card-header card-header-danger">
                             PROVISIONAL HAND OVER (PHO)
                         </div>
                         <div class="card-body">
@@ -435,7 +435,7 @@ $row = mysqli_fetch_array($result);
                     </div>
 
                     <div class="card">
-                        <div class="card-header bg-info">
+                    <div class="card-header card-header-danger">
                             Hasil Akhir / Sementara
                         </div>
                         <div class="card-body">

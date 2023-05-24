@@ -4,7 +4,7 @@
            
           </nav>
           <div class="copyright float-right">
-            Dikembangkan oleh : Tim IT Bappeda Kab.Pidie
+            Dikembangkan oleh : Tim Programmer Bappeda Kab.Pidie
                               &copy;
                               <script>
                                 document.write(new Date().getFullYear())

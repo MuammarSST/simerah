@@ -221,7 +221,7 @@
                      showConfirmButton: false,
                      timer: 1500
                    }).then((result) => {
-                     window.location = '/sitepra';
+                     window.location = '../view/monev.php';
                    });
                    
                   </script>";
