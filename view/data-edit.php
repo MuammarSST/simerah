@@ -11,6 +11,7 @@ $result = mysqli_query($koneksi,$query);
 $row = mysqli_fetch_array($result);
 
 ?>
+
         <div class="container-fluid">
             <div class="title">
                 <h3 class="text-gray-800 my-2">Edit Data Hasil Monev</h3>
@@ -18,9 +19,14 @@ $row = mysqli_fetch_array($result);
             <div class="subtitle border-bottom">
                 <span class=""><a href="index">Beranda </a></span>
                 <span class="text-grey"> / Edit data hasil monev</span>
+                
+            </div>
+            <div class="content">
+            <a href="./monev.php" class="btn btn-danger mx-2 bi bi-arrow-left"><i class="fa fa-reply"></i> Kembali </a>
             </div>
 
             <form method="post" action="../proses/simpan_edit.php">
+                
                 <div class="card">
 
                     <input type="hidden" name="id_paket" id="id_paket" value="<?php echo $row['id_paket']; ?>">

@@ -59,37 +59,7 @@
                     <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-send"></i> Login</button>
                     <div class="clearfix"></div>
                   </form>
-                  <footer class="footer">
-                    <div class="container-fluid">
-                      <nav class="float-center">
-                 
-                              Dikembangkan oleh : Tim IT Bappeda Kab.Pidie
-                              &copy;
-                              <script>
-                                document.write(new Date().getFullYear())
-                              </script>
-                          
-                   
-                      </nav>
-            
-                    </div>
-                  </footer>
-                </div>
-              </div>
-            </div>
-
-            
-
-          </div>
-          </div>
-        </div>
-      </div>
-     
-    </div>
-  </div>
-  <?php
-  require_once('../view/footer.php');
-  ?>
-</body>
-
-</html>
+                  
+                  <?php
+require('../view/template-bawah-monev.php')
+?>

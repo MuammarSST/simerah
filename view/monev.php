@@ -45,7 +45,7 @@ if (!$result_laporan) {
                         <th>
                         Alamat
                         </th>
-                        <th>
+                        <th style="text-align: center;">
                         Aksi
                         </th>
 
@@ -76,7 +76,7 @@ if (!$result_laporan) {
                                     <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
                                     <button type="submit" name="edit_paket"
                                         class="btn btn-info " title="Rincian Data">
-                                        <i class="fa fa-book"></i>
+                                        <i class="fa fa-print"></i>
                                     </button>
                                 </form>
                             
@@ -86,11 +86,7 @@ if (!$result_laporan) {
                                 <button type="submit" name="edit_paket" value="Edit Data" class="btn btn-danger">
                                 <i class="fa fa-edit"></i> </button>
                             </form>
-                            <form method="POST" action="foto_upload.php" >
-                                <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
-                                <button type="submit" name="edit_paket" class="btn btn-warning"
-                                    title="Upload Foto"><i class="fa fa-upload"></i> </button>
-                            </form>
+
                             <form method="POST" target="_blank" action="lihat_peta.php">
                                 <input type="hidden" name="latitude" value="<?php echo $lat ?>">
                                 <input type="hidden" name="longitude" value="<?php echo $long ?>">
@@ -104,23 +100,23 @@ if (!$result_laporan) {
                             <i class="fa fa-bars"></i>
                             </a>
                             <div class="dropdown-menu">
-                                <form method="POST" action="data-rincian.php">
+                                <form method="POST" action="progres0.php">
                                     <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
-                                    <button type="submit" name="edit_paket"
+                                    <button type="submit" name="progres0"
                                         class="btn btn-warning btn-lg btn-block" title="Rincian Data">
                                         <i class="fa fa-circle-o-notch"></i> Progres 0%
                                     </button>
                                 </form>
-                                <form method="POST" action="data-rincian.php">
+                                <form method="POST" action="progres50.php">
                                     <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
-                                    <button type="submit" name="edit_paket"
+                                    <button type="submit" name="progres50"
                                         class="btn btn-info btn-lg btn-block" title="Rincian Data">
                                         <i class="fa fa-spinner"></i> Progres 50%
                                     </button>
                                 </form>
-                                <form method="POST" action="data-rincian.php">
+                                <form method="POST" action="progres100.php">
                                     <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
-                                    <button type="submit" name="edit_paket"
+                                    <button type="submit" name="progres100"
                                         class="btn btn-success btn-lg btn-block" title="Progres 100%">
                                         <i class="fa fa-check-square"></i> Progres 100%
                                     </button>
