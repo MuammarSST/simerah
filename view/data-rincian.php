@@ -67,7 +67,7 @@ include 'header.php';
                 </button>
                 <form method="POST" action="../proses/rincian_export_excel.php" >
 					<input type="hidden" name="id_paket" value="<?php echo $post_id_paket ?>">
-					<input type="submit" name="export_excel" value="export excel (masih error)" class ="btn btn-success">
+					<button type="submit" name="submit"  class ="btn btn-success"><i class="fa fa-file-excel-o"></i> export excel (masih error)</button>
 				</form>
                 </div>
                 <div class="col-sm">
