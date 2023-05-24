@@ -17,14 +17,14 @@ require_once('../view/header.php');
       </a></div>
     <div class="sidebar-wrapper">
       <ul class="nav">
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="./admin-monev-dashboard.php">
             <i class="material-icons">dashboard</i>
             <p>Dashboard</p>
           </a>
         </li>
 
-        <li class="nav-item ">
+        <li class="nav-item active">
           <a class="nav-link" href="./monev.php">
             <i class="material-icons">bubble_chart</i>
             <p>Monev Lapangan</p>

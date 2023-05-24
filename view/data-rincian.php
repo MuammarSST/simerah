@@ -13,11 +13,21 @@ $row = mysqli_fetch_array($result);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+    <script>
+        function ExportToExcel(type, fn, dl) {
+       var elt = document.getElementById('container_content');
+       var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+       return dl ?
+         XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }):
+         XLSX.writeFile(wb, fn || ('LAPORAN.' + (type || 'xlsx')));
+    }
+    </script>
     <script>
     function generatePDF() {
         const element = document.getElementById('container_content');
@@ -33,6 +43,8 @@ $row = mysqli_fetch_array($result);
         };
         html2pdf().set(opt).from(element).save();
     }
+
+
     </script>
 </head>
 
@@ -47,9 +59,12 @@ include 'header.php';
                 </div>
                 <div class="d-flex justify-content-center">
                     <a href="./monev.php" class="btn btn-danger mx-2 bi bi-arrow-left"><i class="fa fa-reply"></i> Kembali </a>
-                    <button class="btn btn-primary" onclick="generatePDF()">Download PDF &nbsp;
-                        <i class="bi bi-download"></i>
+                    <button class="btn btn-primary" onclick="generatePDF()">
+                          <i class="fa fa-download"></i> Download PDF 
                     </button>
+                    <button  class="btn btn-success" onclick="ExportToExcel('xlsx')">
+                    <i class="fa fa-file-excel-o"></i> Dowload Excel
+                </button>
                 </div>
                 <div class="col-sm">
                 </div>

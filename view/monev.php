@@ -21,14 +21,14 @@ if (!$result_laporan) {
             <span class="text-grey"> / Data hasil monev</span>
         </div>
         
-        <a href="data-tambah.php" class="btn btn-primary shadow"> <i class="fa fa-plus"></i></button> Tambah Data</a>
+        <a href="data-tambah.php" class="btn btn-danger shadow"> <i class="fa fa-plus"></i></button> Tambah Data</a>
      
         <div class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
               <div class="card">
-                <div class="card-header card-header-primary">
+                <div class="card-header card-header-danger">
                   <h4 class="card-title "> Data hasil monev</h4>
                   <p class="card-category"> </p>
                 </div>
@@ -86,7 +86,7 @@ if (!$result_laporan) {
                                 <button type="submit" name="edit_paket" value="Edit Data" class="btn btn-danger">
                                 <i class="fa fa-edit"></i> </button>
                             </form>
-                            <form method="POST" action="foto_upload" >
+                            <form method="POST" action="foto_upload.php" >
                                 <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
                                 <button type="submit" name="edit_paket" class="btn btn-warning"
                                     title="Upload Foto"><i class="fa fa-upload"></i> </button>
