@@ -1,5 +1,5 @@
 <?php
-require('../view/template-atas-monev.php')
+require('../view/template-atas-monev.php');
 ?>
 
 
@@ -11,6 +11,8 @@ $result_laporan = mysqli_query($koneksi,$query_laporan);
 if (!$result_laporan) {
   die('Invalid query: ' . $mysqli->error);
 }
+
+
 ?>
     <div class="container-fluid">
         <div class="title">
@@ -70,20 +72,14 @@ if (!$result_laporan) {
 
                         <td class="footer">
                         
-                        <form method="POST" action="data-rincian-cetak.php">
-                                    <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
-                                    <button type="submit" name="edit_paket"
-                                        class="btn btn-info " title="cetak">
-                                        <i class="fa fa-print"></i>
-                                    </button>
-                                </form>
+
                             
                         
                         <form method="POST" action="data-rincian.php">
                                     <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
                                     <button type="submit" name="edit_paket"
                                         class="btn btn-info " title="Rincian Data">
-                                        <i class="fa fa-book"></i>
+                                        <i class="fa fa-search"></i>
                                     </button>
                                 </form>
                             

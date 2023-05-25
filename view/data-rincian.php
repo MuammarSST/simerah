@@ -35,11 +35,16 @@ $row = mysqli_fetch_array($result);
             margin: 0.1,
             filename: '<?php echo $row['nama_skpk'];?> - <?php echo $row['nama_paket']; ?>.pdf',
           
-            jsPDF: {
-                unit: 'cm',
-                format: 'a3',
-                orientation: 'landscape'
+
+
+            jsPDF:{
+                orientation: 'p',
+                unit: 'mm',
+                format: 'a2',
+
             }
+
+
         };
         html2pdf().set(opt).from(element).save();
     }
@@ -52,15 +57,16 @@ $row = mysqli_fetch_array($result);
     <?php
 include 'header.php';
 ?>
-    <main>
+
         <div class="container">
             <div class="row">
                 <div class="col-sm">
                 </div>
                 <div class="d-flex justify-content-center">
                     <a href="./monev.php" class="btn btn-danger mx-2 bi bi-arrow-left"><i class="fa fa-reply"></i> Kembali </a>
+
                     <button class="btn btn-primary" onclick="generatePDF()">
-                          <i class="fa fa-download"></i> Download PDF 
+                          <i class="fa fa-download"></i> Download PDF (masih error)
                     </button>
                     <button  class="btn btn-success" onclick="ExportToExcel('xlsx')">
                     <i class="fa fa-file-excel-o"></i> Dowload Excel (masih error)
@@ -78,7 +84,7 @@ include 'header.php';
         <br>
 
      
-            <table class="table table-bordered" id="container_content">
+            <table class="table table-bordered" id="container_content" >
                 <thead>
                     <tr class="text-center">
                         <th scope="col" style="background: #B4C6E7;">KONSTRUKSI</th>
@@ -248,17 +254,7 @@ include 'header.php';
                         <td><?php echo $row['pho_nama_6']; ?></td>
                         <td><?php echo $row['pho_instasi_asal_6']; ?></td>
                     </tr>
-                    <tr>
 
-
-                        <th></th>
-                        <td></td>
-                        <th></th>
-                        <td></td>
-                        <td></td>
-
-                        
-                    </tr>
                     <tr class="text-center" style="background: #D9D9D9;">
                         <th></th>
                         <th></th>
@@ -268,7 +264,7 @@ include 'header.php';
                     </tr>
                     <tr>
                         <th rowspan="5"><img src="<?php echo $row['gambar_kondisi_3'];?>" width="400" height="300"></th>
-                        <th rowspan="5"> <img src="<?php echo $row['gambar_kondisi_4'];?>" width="400" height="300">
+                        <th rowspan="5"> <img src="<?php echo $row['gambar_kondisi_4'];?>" width="400" height="300" >
                         </th>
                         <th>1. Nama Perusahaan</th>
                         <td><?php echo $row['pr_nama_perusahaan'];?></td>
@@ -399,7 +395,7 @@ include 'header.php';
                 </tbody>
             </table>
       
-    </main>
+
     <?php
 include 'footer.php';
 ?>
