@@ -66,7 +66,7 @@ include 'header.php';
                     <a href="./monev.php" class="btn btn-danger mx-2 bi bi-arrow-left"><i class="fa fa-reply"></i> Kembali </a>
 
                     <button class="btn btn-primary" onclick="generatePDF()">
-                          <i class="fa fa-download"></i> Download PDF (masih error)
+                          <i class="fa fa-download"></i> Download PDF
                     </button>
                     <button  class="btn btn-success" onclick="ExportToExcel('xlsx')">
                     <i class="fa fa-file-excel-o"></i> Dowload Excel (masih error)
