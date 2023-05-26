@@ -1,8 +1,8 @@
 <?php
-include 'header.php';
-?>
+require('../view/template-atas-admin.php');
 
-<main>
+require('../proses/koneksi.php');
+?>
     <div class="container container-fluid">
         <div class="title">
             <h3 class="text-gray-800 my-2">Data SKPK</h3>
@@ -18,7 +18,7 @@ include 'header.php';
             </button>
         </div>
         <div class="table col col-auto border p-4 shadow rounded">
-            <table id="myTable" class="table table-striped table-bordered border-primaryy table-hover table-sm"
+            <table id="myTable" class="table table-bordered"
                 data-page-length="25">
                 <thead class="table-primary text-center">
                     <tr>
@@ -31,7 +31,7 @@ include 'header.php';
                     </tr>
                 </thead>
                 <?php 
-                            include ('proses/koneksi.php');
+                         
                             $noUrut=1;
                             $data=mysqli_query($koneksi,"SELECT * FROM skpk");
                             $jumlah_data = mysqli_num_rows($data);
@@ -47,12 +47,12 @@ include 'header.php';
                         <td><?php echo $d['alamat']; ?></td>
                         <td><?php echo $d['keterangan']; ?></td>
                         <td class="text-center">
-                            <button class="btn btn-sm btn-warning bi bi-pencil mr-2" title="Edit" data-bs-toggle="modal"
+                            <button class="btn btn-sm btn-warning fa fa-pencil mr-2" title="Edit" data-bs-toggle="modal"
                                 data-bs-target="#dataSkpkEdit<?php echo $d['id_skpk']; ?>"
                                 value="<?php echo $d['id_skpk']; ?>"></button>
                             <a href="proses/data-skpk-hapus?id=<?php echo $d['id_skpk']; ?>"
                                 onClick="return confirm('Apakah anda yakin menghapus data ini?')">
-                                <i class="btn btn-sm btn-danger bi bi-trash mr-2" title="Hapus"></i>
+                                <i class="btn btn-sm btn-danger fa fa-trash mr-2" title="Hapus"></i>
                             </a>
                             <!-- Modal Edit Data -->
                             <div class="modal fade" id="dataSkpkEdit<?php echo $d['id_skpk']; ?>" role="dialog"
