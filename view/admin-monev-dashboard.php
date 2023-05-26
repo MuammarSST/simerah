@@ -1,5 +1,6 @@
 <?php
 require('../view/template-atas-monev.php');
+
 ?>
 
 
@@ -22,7 +23,7 @@ require('../view/template-atas-monev.php');
                     <i class="fa fa-users"></i>
                   </div>
                   <p class="card-category">KPA</p>
-                  <h3 class="card-title">149
+                  <h3 class="card-title">-
                    
                   </h3>
                 </div>
@@ -40,7 +41,7 @@ require('../view/template-atas-monev.php');
                     <i class="material-icons">store</i>
                   </div>
                   <p class="card-category">PPTK</p>
-                  <h3 class="card-title">416</h3>
+                  <h3 class="card-title">-</h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -56,7 +57,7 @@ require('../view/template-atas-monev.php');
                     <i class="fa fa-book"></i>
                   </div>
                   <p class="card-category">Program</p>
-                  <h3 class="card-title">75</h3>
+                  <h3 class="card-title">-</h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -72,7 +73,7 @@ require('../view/template-atas-monev.php');
                     <i class="fa fa-sitemap"></i>
                   </div>
                   <p class="card-category">Kegiatan</p>
-                  <h3 class="card-title">245</h3>
+                  <h3 class="card-title">-</h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">

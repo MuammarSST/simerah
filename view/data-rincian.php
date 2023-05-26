@@ -41,8 +41,10 @@ $row = mysqli_fetch_array($result);
                 orientation: 'p',
                 unit: 'mm',
                 format: 'a2',
+                
 
             }
+            
 
 
         };

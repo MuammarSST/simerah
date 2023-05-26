@@ -19,25 +19,42 @@ require_once('../view/header.php');
     <div class="logo"><a href="#" class="simple-text logo-normal">
       SIMOEDA
       </a></div>
-    <div class="sidebar-wrapper">
-      <ul class="nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="./admin-monev-dashboard.php">
-            <i class="material-icons">dashboard</i>
-            <p>Dashboard</p>
-          </a>
-        </li>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="./admin-dashboard.php">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item active ">
+            <a class="nav-link" href="./data-jenis-paket.php">
+              <i class="material-icons">book</i>
+              <p>Data Jenis Paket</p>
+            </a>
+          </li>
+          <li class="nav-item active ">
+            <a class="nav-link" href="./data-kecamatan.php">
+              <i class="material-icons">content_paste</i>
+              <p>Data Kecamatan</p>
+            </a>
+          </li>
+          <li class="nav-item active ">
+            <a class="nav-link" href="./data-skpk.php">
+              <i class="material-icons">library_books</i>
+              <p>Data SKPK</p>
+            </a>
+          </li>
+          <li class="nav-item active ">
+            <a class="nav-link" href="./data-user.php">
+              <i class="material-icons">bubble_chart</i>
+              <p>Data User</p>
+            </a>
+          </li>
 
-        <li class="nav-item active">
-          <a class="nav-link" href="./monev.php">
-            <i class="material-icons">bubble_chart</i>
-            <p>Monev Lapangan</p>
-          </a>
-        </li>
-
-        
-      </ul>
-    </div>
+          
+        </ul>
+      </div>
     </div>
     <div class="main-panel">
       <!-- Navbar -->
