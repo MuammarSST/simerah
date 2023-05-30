@@ -6,6 +6,12 @@ $result_skpk = mysqli_query($koneksi,$query_skpk);
 if (!$result_skpk) {
   die('Invalid query: ' .$mysqli->error);
 }
+
+$query_jenis_paket = "SELECT * FROM jenis_paket";
+$result_jenis_paket = mysqli_query($koneksi,$query_jenis_paket);
+if (!$result_jenis_paket) {
+  die('Invalid query: ' .$mysqli->error);
+}
 ?>
 <?php
 require('../view/template-atas-monev.php')
@@ -31,6 +37,24 @@ require('../view/template-atas-monev.php')
                             <label for="nama_paket" class="form-label">NAMA PAKET :</label>
                             <input type="text" class="form-control" id="nama_paket" name="nama_paket" required>
                         </div>
+                        <div class="col-12">
+                            <label for="jenis_paket" class="form-label">JENIS PAKET :</label>
+                            <select id="jenis_paket" name="jenis_paket" class="form-select" required>
+                                <?php
+                                    $i=0;
+                                while ($row = @mysqli_fetch_assoc($result_jenis_paket)){
+                        
+                                    $id_jenis_paket=$row['id'];
+                                    $kode_jenis_paket=$row['kode'];
+
+                                ?>
+                                                        <option value="<?php echo $id_jenis_paket;?>"><?php echo $kode_jenis_paket;?></option>
+                                                        <?php 
+                                $i++;
+                                } ?>
+                            </select>
+                        </div>
+
                         <div class="col-12">
                             <label for="alamat_paket" class="form-label">ALAMAT :</label>
                             <input type="text" class="form-control" id="alamat_paket" name="alamat_paket" required>
