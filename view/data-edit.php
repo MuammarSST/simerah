@@ -10,6 +10,11 @@ $query = "SELECT laporan.*, skpk.nama_skpk FROM laporan  INNER JOIN skpk ON lapo
 $result = mysqli_query($koneksi,$query);
 $row = mysqli_fetch_array($result);
 
+$query_jenis_paket = "SELECT * FROM jenis_paket";
+$result_jenis_paket = mysqli_query($koneksi, $query_jenis_paket);
+if (!$result_jenis_paket) {
+    die('Invalid query: ' . $mysqli->error);
+}
 ?>
 
         <div class="container-fluid">
@@ -41,6 +46,24 @@ $row = mysqli_fetch_array($result);
                                 <input type="text" class="form-control" id="nama_paket" name="nama_paket"
                                     value="<?php echo $row['nama_paket']; ?>" required>
                             </div>
+                                                <div class="col-12">
+                        <label for="jenis_paket" class="form-label">JENIS PAKET :</label>
+                        <select id="jenis_paket" name="jenis_paket" class="card" required>
+                        <option disabled selected required>--- Silahkan Pilih Jenis Paket ---</option>
+                            <?php
+                            $i = 0;
+                            while ($row_jenis_paket = @mysqli_fetch_assoc($result_jenis_paket)) {
+
+                                $id_jenis_paket = $row_jenis_paket['id'];
+                                $kode_jenis_paket = $row_jenis_paket['kode'];
+
+                            ?>
+                                <option value="<?php echo $id_jenis_paket; ?>"><?php echo $kode_jenis_paket; ?></option>
+                            <?php
+                                $i++;
+                            } ?>
+                        </select>
+                    </div>
                             <div class="col-12">
                                 <label for="alamat_paket" class="form-label">ALAMAT :</label>
                                 <input type="text" class="form-control" id="alamat_paket" name="alamat_paket"
@@ -67,7 +90,7 @@ $row = mysqli_fetch_array($result);
                         <div class="card-body">
                             <div class="col-12">
                                 <label for="skpk_id" class="form-label">NAMA SKPK :</label>
-                                <select id="skpk_id" name="skpk_id" class="form-select" required>
+                                <select id="skpk_id" name="skpk_id" class="card" required>
                                     <option value="<?php echo $row['skpk_id']; ?>" selected>
                                         <?php echo $row['nama_skpk'];?>
                                     </option>
