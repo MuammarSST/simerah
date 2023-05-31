@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Bulan Mei 2023 pada 10.34
+-- Waktu pembuatan: 31 Bulan Mei 2023 pada 05.50
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -38,7 +38,8 @@ CREATE TABLE `jenis_paket` (
 --
 
 INSERT INTO `jenis_paket` (`id`, `kode`, `keterangan`) VALUES
-(1, 'F1', 'Konstruksi');
+(1, 'F1', 'Konstruksi'),
+(6, 'F2', 'test');
 
 -- --------------------------------------------------------
 
@@ -151,20 +152,22 @@ CREATE TABLE `laporan` (
   `gambar_kondisi_3` varchar(255) DEFAULT NULL,
   `gambar_kondisi_4` varchar(255) DEFAULT NULL,
   `gambar_kondisi_5` varchar(255) DEFAULT NULL,
-  `gambar_kondisi_6` varchar(255) DEFAULT NULL
+  `gambar_kondisi_6` varchar(255) DEFAULT NULL,
+  `jenis_paket` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `laporan`
 --
 
-INSERT INTO `laporan` (`id_paket`, `nama_paket`, `alamat_paket`, `latitude`, `longitude`, `skpk_id`, `kpa`, `alamat_skpk`, `nama_pa`, `nama_bendahara`, `nama_pptk`, `pl_nama_1`, `pl_instasi_asal_1`, `pl_nama_2`, `pl_instasi_asal_2`, `pl_nama_3`, `pl_instasi_asal_3`, `pl_nama_4`, `pl_instasi_asal_4`, `pl_nama_5`, `pl_instasi_asal_5`, `nama`, `jabatan`, `alamat`, `pho_nama_1`, `pho_instasi_asal_1`, `pho_nama_2`, `pho_instasi_asal_2`, `pho_nama_3`, `pho_instasi_asal_3`, `pho_nama_4`, `pho_instasi_asal_4`, `pho_nama_5`, `pho_instasi_asal_5`, `pho_nama_6`, `pho_instasi_asal_6`, `pr_nama_perusahaan`, `pr_alamat_perusahaan`, `pr_nama_pimpinan`, `pr_alamat_pimpinan`, `pr_nilai_kontrak`, `pw_nama_perusahaan`, `pw_alamat_perusahaan`, `pw_nama_pimpinan`, `pw_alamat_pimpinan`, `pw_nilai_kontrak`, `pf_nama_perusahaan`, `pf_alamat_perusahaan`, `pf_nama_pimpinan`, `pf_nomor_kontrak`, `pf_nilai_kontrak`, `pf_tanggal`, `pf_pagu`, `pf_sumber_dana`, `no_pho`, `tgl_pho`, `ha`, `gambar_kondisi_1`, `gambar_kondisi_2`, `gambar_kondisi_3`, `gambar_kondisi_4`, `gambar_kondisi_5`, `gambar_kondisi_6`) VALUES
-(18, 'Penyelesaian Revitalisasi SDN 1 Lampoh Saka Lantai I6', 'Peukan Baro      ', '5.3269696', '95.9506515', 4, 'Mutiyawati, S.Pd, M.Pd', 'Kab. Pidie', 'YUSMADI, S.Pd, M.Pd', 'Mutiyawati, S.Pd, M.Pd', 'Muhammad Firdaus, S.Sos', 'Mutiyawati, S.Pd, M.Pd', '-Mutiyawati, S.Pd, M.Pd', 'Mutiyawati, S.Pd, M.Pd', '-', 'Mutiyawati, S.Pd, M.Pd', '-', '-', '-', '-', '-', '-Mutiyawati, S.Pd, M.Pd', '-Mutiyawati, S.Pd, M.Pd', '-Mutiyawati, S.Pd, M.Pd', '-Mutiyawati, S.Pd, M.Pd', '-Mutiyawati, S.Pd, M.Pd', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-Mutiyawati, S.Pd, M.Pd', '-', '-', '-', '-', '-Mutiyawati, S.Pd, M.Pd', '-', '-', '-', '-', 'CV. ROYAL MANDIRI COOPERATION', '-', '-', '-', '-', '-', '814800000', 'DOKA', '-Mutiyawati, S.Pd, M.Pd', '-', '60%', '../uploads/1.png', '../uploads/2.png', '../uploads/3.png', '../uploads/4.png', '../uploads/5.png', '../uploads/6.png'),
-(19, 'Penyelesaian Revitalisasi SDN 1 Lampoh Saka Lantai I3', 'Peukan Baro ', '5.1825', ' 95.57505', 2, 'Mutiyawati, S.Pd, M.Pd', 'Kab. Pidie', 'YUSMADI, S.Pd, M.Pd', '-', 'Muhammad Firdaus, S.Sos', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'CV. ROYAL MANDIRI COOPERATION', '-', '-', '-', '-', '-', '814800000', 'DOKA', '-', '-', '60%', 'uploads/facial-recognition-connected-real-estate.png', 'uploads/ektp.png', 'uploads/Foto-Utama.jpg', 'uploads/facial-recognition-connected-real-estate.png', 'uploads/IMG_20210918_223832337.jpg', 'uploads/wp3997626.jpg'),
-(20, 'Penyelesaian Revitalisasi SDN 1 Lampoh Saka Lantai II', 'Peukan Baro', '5,1825', ' 95,57505', 2, 'Mutiyawati, S.Pd, M.Pd', 'Kab. Pidie', 'YUSMADI, S.Pd, M.Pd', '-', 'Muhammad Firdaus, S.Sos', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'CV. ROYAL MANDIRI COOPERATION', '-', '-', '-', '-', '-', '814800000', 'DOKA', '-', '-', '60%', NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 'Penyelesaian Revitalisasi SDN 1 Lampoh Saka Lantai II', 'Peukan Baro', '5,1825', ' 95,57505', 2, 'Mutiyawati, S.Pd, M.Pd', 'Kab. Pidie', 'YUSMADI, S.Pd, M.Pd', '-', 'Muhammad Firdaus, S.Sos', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'CV. ROYAL MANDIRI COOPERATION', '-', '-', '-', '-', '-', '814800000', 'DOKA', '-', '-', '60%', NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 'sd kabat', '2 ', '3', '1', 5, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '../uploads/1.png', '../uploads/2.png', '../uploads/3.png', '../uploads/4.png', '../uploads/5.png', '../uploads/6.png'),
-(0, 'saya', '-', '-', '-', 1, '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '--', '-', '--', '-', '--', '-', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `laporan` (`id_paket`, `nama_paket`, `alamat_paket`, `latitude`, `longitude`, `skpk_id`, `kpa`, `alamat_skpk`, `nama_pa`, `nama_bendahara`, `nama_pptk`, `pl_nama_1`, `pl_instasi_asal_1`, `pl_nama_2`, `pl_instasi_asal_2`, `pl_nama_3`, `pl_instasi_asal_3`, `pl_nama_4`, `pl_instasi_asal_4`, `pl_nama_5`, `pl_instasi_asal_5`, `nama`, `jabatan`, `alamat`, `pho_nama_1`, `pho_instasi_asal_1`, `pho_nama_2`, `pho_instasi_asal_2`, `pho_nama_3`, `pho_instasi_asal_3`, `pho_nama_4`, `pho_instasi_asal_4`, `pho_nama_5`, `pho_instasi_asal_5`, `pho_nama_6`, `pho_instasi_asal_6`, `pr_nama_perusahaan`, `pr_alamat_perusahaan`, `pr_nama_pimpinan`, `pr_alamat_pimpinan`, `pr_nilai_kontrak`, `pw_nama_perusahaan`, `pw_alamat_perusahaan`, `pw_nama_pimpinan`, `pw_alamat_pimpinan`, `pw_nilai_kontrak`, `pf_nama_perusahaan`, `pf_alamat_perusahaan`, `pf_nama_pimpinan`, `pf_nomor_kontrak`, `pf_nilai_kontrak`, `pf_tanggal`, `pf_pagu`, `pf_sumber_dana`, `no_pho`, `tgl_pho`, `ha`, `gambar_kondisi_1`, `gambar_kondisi_2`, `gambar_kondisi_3`, `gambar_kondisi_4`, `gambar_kondisi_5`, `gambar_kondisi_6`, `jenis_paket`) VALUES
+(1, 'saya', '-', '-', '-', 1, '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '--', '-', '--', '-', '--', '-', NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(2, 'test', 'test ', 'test', 'test', 43, 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', NULL, NULL, NULL, NULL, NULL, NULL, 6),
+(18, 'Penyelesaian Revitalisasi SDN 1 Lampoh Saka Lantai I6', 'Peukan Baro      ', '5.3269696', '95.9506515', 4, 'Mutiyawati, S.Pd, M.Pd', 'Kab. Pidie', 'YUSMADI, S.Pd, M.Pd', 'Mutiyawati, S.Pd, M.Pd', 'Muhammad Firdaus, S.Sos', 'Mutiyawati, S.Pd, M.Pd', '-Mutiyawati, S.Pd, M.Pd', 'Mutiyawati, S.Pd, M.Pd', '-', 'Mutiyawati, S.Pd, M.Pd', '-', '-', '-', '-', '-', '-Mutiyawati, S.Pd, M.Pd', '-Mutiyawati, S.Pd, M.Pd', '-Mutiyawati, S.Pd, M.Pd', '-Mutiyawati, S.Pd, M.Pd', '-Mutiyawati, S.Pd, M.Pd', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-Mutiyawati, S.Pd, M.Pd', '-', '-', '-', '-', '-Mutiyawati, S.Pd, M.Pd', '-', '-', '-', '-', 'CV. ROYAL MANDIRI COOPERATION', '-', '-', '-', '-', '-', '814800000', 'DOKA', '-Mutiyawati, S.Pd, M.Pd', '-', '60%', '../uploads/1.png', '../uploads/2.png', '../uploads/3.png', '../uploads/4.png', '../uploads/5.png', '../uploads/6.png', 1),
+(19, 'Penyelesaian Revitalisasi SDN 1 Lampoh Saka Lantai I3', 'Peukan Baro  ', '5.1825', ' 95.57505', 6, 'Mutiyawati, S.Pd, M.Pd', 'Kab. Pidie', 'YUSMADI, S.Pd, M.Pd', '-', 'Muhammad Firdaus, S.Sos', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'CV. ROYAL MANDIRI COOPERATION', '-', '-', '-', '-', '-', '814800000', 'DOKA', '-', '-', '60%', 'uploads/facial-recognition-connected-real-estate.png', 'uploads/ektp.png', 'uploads/Foto-Utama.jpg', 'uploads/facial-recognition-connected-real-estate.png', 'uploads/IMG_20210918_223832337.jpg', 'uploads/wp3997626.jpg', 1),
+(20, 'Penyelesaian Revitalisasi SDN 1 Lampoh Saka Lantai II', 'Peukan Baro ', '5,1825', ' 95,57505', 76, 'Mutiyawati, S.Pd, M.Pd', 'Kab. Pidie', 'YUSMADI, S.Pd, M.Pd', '-', 'Muhammad Firdaus, S.Sos', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'CV. ROYAL MANDIRI COOPERATION', '-', '-', '-', '-', '-', '814800000', 'DOKA', '-', '-', '60%', NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(21, 'Penyelesaian Revitalisasi SDN 1 Lampoh Saka Lantai II', 'Peukan Baro', '5,1825', ' 95,57505', 2, 'Mutiyawati, S.Pd, M.Pd', 'Kab. Pidie', 'YUSMADI, S.Pd, M.Pd', '-', 'Muhammad Firdaus, S.Sos', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', 'CV. ROYAL MANDIRI COOPERATION', '-', '-', '-', '-', '-', '814800000', 'DOKA', '-', '-', '60%', NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(23, 'sd kabat', '2 ', '3', '1', 5, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '../uploads/1.png', '../uploads/2.png', '../uploads/3.png', '../uploads/4.png', '../uploads/5.png', '../uploads/6.png', 1);
 
 -- --------------------------------------------------------
 
@@ -312,6 +315,13 @@ ALTER TABLE `kecamatan`
   ADD PRIMARY KEY (`id_kecamatan`);
 
 --
+-- Indeks untuk tabel `laporan`
+--
+ALTER TABLE `laporan`
+  ADD PRIMARY KEY (`id_paket`),
+  ADD KEY `jenis_paket_fk` (`jenis_paket`);
+
+--
 -- Indeks untuk tabel `skpk`
 --
 ALTER TABLE `skpk`
@@ -331,13 +341,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `jenis_paket`
 --
 ALTER TABLE `jenis_paket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `kecamatan`
 --
 ALTER TABLE `kecamatan`
   MODIFY `id_kecamatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT untuk tabel `laporan`
+--
+ALTER TABLE `laporan`
+  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT untuk tabel `skpk`
