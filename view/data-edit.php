@@ -6,7 +6,9 @@ require('../proses/koneksi.php');
 
 $post_id_paket = $_POST['id_paket'];
 
-$query = "SELECT laporan.*, skpk.nama_skpk FROM laporan  INNER JOIN skpk ON laporan.skpk_id=skpk.id_skpk where laporan.id_paket = '$post_id_paket' ";
+$query = "SELECT laporan.*, skpk.nama_skpk,jenis_paket.* FROM laporan  INNER JOIN skpk ON laporan.skpk_id=skpk.id_skpk 
+INNER JOIN jenis_paket ON laporan.jenis_paket=jenis_paket.id
+where laporan.id_paket = '$post_id_paket' ";
 $result = mysqli_query($koneksi,$query);
 $row = mysqli_fetch_array($result);
 
@@ -49,7 +51,10 @@ if (!$result_jenis_paket) {
                                                 <div class="col-12">
                         <label for="jenis_paket" class="form-label">JENIS PAKET :</label>
                         <select id="jenis_paket" name="jenis_paket" class="card" required>
-                        <option disabled selected required>--- Silahkan Pilih Jenis Paket ---</option>
+                        <option value="<?php echo $row['jenis_paket']; ?>" selected>
+                                        <?php echo $row['kode'];?>
+                                    </option>
+                                    <option disabled> --- Pilih Jenis Paket ---</option>
                             <?php
                             $i = 0;
                             while ($row_jenis_paket = @mysqli_fetch_assoc($result_jenis_paket)) {

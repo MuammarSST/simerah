@@ -2,7 +2,8 @@
 require('../proses/koneksi.php');
 
 $post_id_paket = $_POST['id_paket'];
-$query = "SELECT laporan.*, skpk.nama_skpk FROM laporan  INNER JOIN skpk ON laporan.skpk_id=skpk.id_skpk where laporan.id_paket = '$post_id_paket' ";
+$query = "SELECT laporan.*, skpk.nama_skpk, jenis_paket.* FROM laporan  INNER JOIN skpk ON laporan.skpk_id=skpk.id_skpk 
+INNER JOIN jenis_paket ON laporan.jenis_paket=jenis_paket.id where laporan.id_paket = '$post_id_paket' ";
 $result = mysqli_query($koneksi,$query);
 $row = mysqli_fetch_array($result);
 
@@ -100,7 +101,7 @@ include 'header.php';
                 </thead>
                 <tbody>
                     <tr class="text-center">
-                        <th style="background: #B4C6E7;">F1</th>
+                        <th style="background: #B4C6E7;"><?php echo $row['kode'];?></th>
                         <th colspan="3" style="background: #C6E0B4;"></th>
                         <th colspan="2" style="background: #B4C6E7;">H</th>
                         <th style="background: #C6E0B4;"></th>

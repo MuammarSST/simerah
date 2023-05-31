@@ -17,6 +17,7 @@
 if(isset($_POST['submit'])){
     $id_paket = $_POST['id_paket'];
     $nama_paket = $_POST['nama_paket'];
+    $jenis_paket = $_POST['jenis_paket'];
     $alamat_paket = $_POST['alamat_paket'];
     $latitude = $_POST['latitude'];
     $longitude = $_POST['longitude'];
@@ -141,7 +142,8 @@ if(isset($_POST['submit'])){
         pf_sumber_dana = '$pf_sumber_dana',
         no_pho = '$no_pho',
         tgl_pho = '$tgl_pho',
-        ha =  '$ha'
+        ha =  '$ha',
+        jenis_paket ='$jenis_paket'
         
     WHERE id_paket = '$id_paket'";
     // var_dump($query);
