@@ -2,7 +2,7 @@
 require('../proses/koneksi.php');
 
 $post_id_paket = $_POST['id_paket'];
-$query = "SELECT laporan.*, skpk.nama_skpk, jenis_paket.* FROM laporan  INNER JOIN skpk ON laporan.skpk_id=skpk.id_skpk 
+$query = "SELECT laporan.*, skpk.nama_skpk, jenis_paket.* FROM laporan  LEFT JOIN skpk ON laporan.skpk_id=skpk.id_skpk 
 INNER JOIN jenis_paket ON laporan.jenis_paket=jenis_paket.id where laporan.id_paket = '$post_id_paket' ";
 $result = mysqli_query($koneksi,$query);
 $row = mysqli_fetch_array($result);
