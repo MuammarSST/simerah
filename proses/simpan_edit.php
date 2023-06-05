@@ -84,7 +84,8 @@ if(isset($_POST['submit'])){
     $tgl_pho = $_POST['tgl_pho'];
 
     $ha = $_POST['ha'];
-
+    $id_user = $_POST['id_user'];
+    $id_tahun = $_POST['id_tahun'];
 
     $query = "UPDATE laporan SET 
         nama_paket = '$nama_paket',
@@ -143,8 +144,9 @@ if(isset($_POST['submit'])){
         no_pho = '$no_pho',
         tgl_pho = '$tgl_pho',
         ha =  '$ha',
-        jenis_paket ='$jenis_paket'
-        
+        jenis_paket ='$jenis_paket',
+        id_user = '$id_user',
+        id_tahun = '$id_tahun'
     WHERE id_paket = '$id_paket'";
     // var_dump($query);
     $result = mysqli_query($koneksi,$query);
