@@ -17,7 +17,9 @@ require_once('../view/header.php');
   <div class="sidebar" data-color="danger" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
  
     <div class="logo"><a href="#" class="simple-text logo-normal">
-      SIMOEDA
+      SIMOEDA 
+      <br>
+      <?php print($_SESSION['tahun']) ?>
       </a></div>
     <div class="sidebar-wrapper">
       <ul class="nav">

@@ -19,6 +19,7 @@ include 'koneksi.php';
 
 $username = $_POST['username'];
 $password = md5($_POST['password']);
+$id_tahun = $_POST['id_tahun'];
 // var_dump($Username);
 // exit;
 $query_login = mysqli_query($koneksi,"SELECT * FROM users WHERE username='$username' AND password='$password'");
@@ -36,6 +37,8 @@ if($cek > 0){
 		$_SESSION['username'] = $username;
 		$_SESSION['level'] = "super-admin";
 		$_SESSION['status'] = "login";
+		$_SESSION['tahun'] = $id_tahun;
+
 		// alihkan ke halaman dashboard admin
 		echo("
 		<script>
@@ -61,6 +64,7 @@ if($cek > 0){
 		$_SESSION['username'] = $username;
 		$_SESSION['level'] = "admin-monev";
 		$_SESSION['status'] = "login";
+		$_SESSION['tahun'] = $id_tahun;
 		// alihkan ke halaman dashboard admin monev
 		echo("
 		<script>

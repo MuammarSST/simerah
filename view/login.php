@@ -64,7 +64,7 @@ if (!$result_tahun) {
                     <div class="form-group">
                     <label class="bmd-label-floating">Tahun :</label>
                         <select id="id_tahun" name="id_tahun" class="card" required>
-                        <option disabled selected required>--- Silahkan Pilih Tahun ---</option>
+                       
                             <?php
                             $i = 0;
                             while ($row = @mysqli_fetch_assoc($result_tahun)) {
@@ -73,7 +73,7 @@ if (!$result_tahun) {
                                 $tahun = $row['tahun'];
 
                             ?>
-                                <option value="<?php echo $id_tahun; ?>"><?php echo $tahun; ?></option>
+                                <option value="<?php echo $tahun; ?>"><?php echo $tahun; ?></option>
                             <?php
                                 $i++;
                             } ?>
