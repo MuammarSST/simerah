@@ -18,8 +18,21 @@ $username = $_POST['username'];
 $level = $_POST['level'];
 $keterangan = $_POST['keterangan'];
 
-    $data = mysqli_query($koneksi,"UPDATE users SET nama_lengkap='$namaLengkap', email='$email', nomor_hp='$nomorHp', username='$username', level='$level', keterangan='$keterangan' WHERE id_user='$id'");
+$result = mysqli_query($koneksi,"UPDATE users SET nama_lengkap='$namaLengkap', email='$email', nomor_hp='$nomorHp', username='$username', level='$level', keterangan='$keterangan' WHERE id_user='$id'");
 
-header("location:../data-user?pesan=data-berhasil-diupdate/");
 
+if($result){
+    echo "<script>
+    Swal.fire({
+       position: 'center',
+       icon: 'success',
+       title: 'Data berhasil diedit',
+       showConfirmButton: false,
+       timer: 1500
+     }).then((result) => {
+       window.location = '../view/data-user.php';
+     });
+     
+    </script>";
+}
 ?>

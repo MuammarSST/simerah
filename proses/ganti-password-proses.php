@@ -12,8 +12,21 @@ include ('koneksi.php');
 $id = $_POST['idUser'];
 $password = md5($_POST['password']);
 
-$data = mysqli_query($koneksi,"UPDATE users SET password='$password' WHERE id_user='$id'");
+$result = mysqli_query($koneksi,"UPDATE users SET password='$password' WHERE id_user='$id'");
 
-header("location:../index?pesan=password-berhasil-diganti/");
 
+if($result){
+    echo "<script>
+    Swal.fire({
+       position: 'center',
+       icon: 'success',
+       title: 'Data berhasil ditambah',
+       showConfirmButton: false,
+       timer: 1500
+     }).then((result) => {
+       window.location = '../index.php';
+     });
+     
+    </script>";
+}
 ?>
