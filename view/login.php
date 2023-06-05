@@ -73,7 +73,7 @@ if (!$result_tahun) {
                                 $tahun = $row['tahun'];
 
                             ?>
-                                <option value="<?php echo $tahun; ?>"><?php echo $tahun; ?></option>
+                                <option value="<?php echo $id_tahun; ?>"><?php echo $tahun; ?></option>
                             <?php
                                 $i++;
                             } ?>

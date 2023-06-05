@@ -1,4 +1,5 @@
 <?php
+
 require('../proses/koneksi.php');
 
 $query_skpk = "SELECT * FROM skpk";
@@ -14,7 +15,9 @@ if (!$result_jenis_paket) {
 }
 ?>
 <?php
-require('../view/template-atas-monev.php')
+
+require('../view/template-atas-monev.php');
+
 ?>
 
 <div class="container-fluid">
@@ -399,6 +402,8 @@ require('../view/template-atas-monev.php')
                     </div>
                 </div>
             </div>
+            <input type="hidden" class="form-control" id="id_user" name="id_user" value="<?php echo $id_user; ?>">
+            <input type="hidden" class="form-control" id="id_tahun" name="id_tahun" value="<?php echo $id_tahun; ?>">
             <div class="d-flex justify-content-end mb-4 mx-4">
                 <a href="./monev.php" class="btn btn-danger mx-2"><i class="fa fa-reply"></i> Batal </a>
                 <button type="submit" name="submit" class="btn btn-success px-4"><i class="fa fa-save"></i> Simpan</button>

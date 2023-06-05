@@ -10,6 +10,11 @@ if($_SESSION['status']=="" && $_SESSION['level']==""){
 }
 require_once('../view/header.php');
 
+require('../proses/koneksi.php');
+$id_user=$_SESSION['id_user'];
+$id_tahun=$_SESSION['id_tahun'];
+$query = mysqli_query($koneksi,"SELECT * FROM tahun WHERE id_tahun='$id_tahun'");
+$data = mysqli_fetch_assoc($query);
 ?>
 
 <body class="">
@@ -19,7 +24,7 @@ require_once('../view/header.php');
     <div class="logo"><a href="#" class="simple-text logo-normal">
       SIMOEDA 
       <br>
-      <?php print($_SESSION['tahun']) ?>
+      <?php print($data['tahun']) ?>
       </a></div>
     <div class="sidebar-wrapper">
       <ul class="nav">

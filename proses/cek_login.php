@@ -37,7 +37,7 @@ if($cek > 0){
 		$_SESSION['username'] = $username;
 		$_SESSION['level'] = "super-admin";
 		$_SESSION['status'] = "login";
-		$_SESSION['tahun'] = $id_tahun;
+		$_SESSION['id_tahun'] = $id_tahun;
 
 		// alihkan ke halaman dashboard admin
 		echo("
@@ -64,7 +64,7 @@ if($cek > 0){
 		$_SESSION['username'] = $username;
 		$_SESSION['level'] = "admin-monev";
 		$_SESSION['status'] = "login";
-		$_SESSION['tahun'] = $id_tahun;
+		$_SESSION['id_tahun'] = $id_tahun;
 		// alihkan ke halaman dashboard admin monev
 		echo("
 		<script>

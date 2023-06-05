@@ -6,7 +6,9 @@ require('../view/template-atas-monev.php');
 <?php
 require('../proses/koneksi.php');
 
-$query_laporan = "SELECT * FROM laporan";
+$id_tahun=$_SESSION['id_tahun'];
+$id_user=$_SESSION['id_user'];
+$query_laporan = "SELECT * FROM laporan where id_tahun=$id_tahun and id_user=$id_user";
 $result_laporan = mysqli_query($koneksi,$query_laporan);
 if (!$result_laporan) {
   die('Invalid query: ' . $mysqli->error);
