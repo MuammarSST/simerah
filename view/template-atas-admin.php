@@ -52,6 +52,13 @@ require_once('../view/header.php');
             </a>
           </li>
 
+          <li class="nav-item active ">
+            <a class="nav-link" href="./data-tahun.php">
+              <i class="material-icons">apps</i>
+              <p>Data Tahun</p>
+            </a>
+          </li>
+
           
         </ul>
       </div>
