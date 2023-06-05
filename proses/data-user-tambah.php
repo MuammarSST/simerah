@@ -17,8 +17,21 @@ $password = md5($_POST['password']);
 $level = $_POST['level'];
 $keterangan = $_POST['keterangan'];
 
-$data = mysqli_query($koneksi,"INSERT INTO users VALUES ('', '$namaLengkap', '$email', '$nomorHp', '$username', '$password', '$level', '$keterangan')");
+$result = mysqli_query($koneksi,"INSERT INTO users VALUES ('', '$namaLengkap', '$email', '$nomorHp', '$username', '$password', '$level', '$keterangan')");
 
-header("location:../data-user?pesan=data-berhasil-ditambahkan/");
 
+if($result){
+    echo "<script>
+    Swal.fire({
+       position: 'center',
+       icon: 'success',
+       title: 'Data berhasil ditambah',
+       showConfirmButton: false,
+       timer: 1500
+     }).then((result) => {
+       window.location = '../view/data-user.php';
+     });
+     
+    </script>";
+}
 ?>

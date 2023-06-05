@@ -14,8 +14,21 @@ $kodeKecamatan = $_POST['kodeKecamatan'];
 $namaKecamatan = $_POST['namaKecamatan'];
 $keterangan = $_POST['keterangan'];
 
-    $data = mysqli_query($koneksi,"UPDATE kecamatan SET kode_kecamatan='$kodeKecamatan', nama_kecamatan='$namaKecamatan',  keterangan='$keterangan' WHERE id_kecamatan='$id'");
+$result = mysqli_query($koneksi,"UPDATE kecamatan SET kode_kecamatan='$kodeKecamatan', nama_kecamatan='$namaKecamatan',  keterangan='$keterangan' WHERE id_kecamatan='$id'");
 
-header("location:../data-kecamatan?pesan=data-berhasil-diupdate/");
 
+if($result){
+    echo "<script>
+    Swal.fire({
+       position: 'center',
+       icon: 'success',
+       title: 'Data berhasil diedit',
+       showConfirmButton: false,
+       timer: 1500
+     }).then((result) => {
+       window.location = '../view/data-kecamatan.php';
+     });
+     
+    </script>";
+}
 ?>

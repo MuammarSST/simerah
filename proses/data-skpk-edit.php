@@ -15,8 +15,21 @@ $namaSkpk = $_POST['namaSkpk'];
 $alamat = $_POST['alamat'];
 $keterangan = $_POST['keterangan'];
 
-    $data = mysqli_query($koneksi,"UPDATE skpk SET kode_skpk='$kodeSkpk', nama_skpk='$namaSkpk', alamat='$alamat',  keterangan='$keterangan' WHERE id_skpk='$id'");
+$result = mysqli_query($koneksi,"UPDATE skpk SET kode_skpk='$kodeSkpk', nama_skpk='$namaSkpk', alamat='$alamat',  keterangan='$keterangan' WHERE id_skpk='$id'");
 
-header("location:../data-skpk?pesan=data-berhasil-diupdate/");
 
+if($result){
+    echo "<script>
+    Swal.fire({
+       position: 'center',
+       icon: 'success',
+       title: 'Data berhasil diedit',
+       showConfirmButton: false,
+       timer: 1500
+     }).then((result) => {
+       window.location = '../view/data-skpk.php';
+     });
+     
+    </script>";
+}
 ?>

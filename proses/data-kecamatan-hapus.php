@@ -17,7 +17,7 @@ if($result){
     Swal.fire({
        position: 'center',
        icon: 'success',
-       title: 'Data berhasil disimpan',
+       title: 'Data berhasil dihapus',
        showConfirmButton: false,
        timer: 1500
      }).then((result) => {

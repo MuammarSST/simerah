@@ -10,8 +10,21 @@ session_start();
 include('koneksi.php');
 
 $id = $_GET['id'];
-$data = mysqli_query($koneksi,"DELETE FROM users WHERE id_user='$id'");
+$result = mysqli_query($koneksi,"DELETE FROM users WHERE id_user='$id'");
 
-header("location:../data-user?pesan=data-berhasil-dihapus/");
 
+if($result){
+    echo "<script>
+    Swal.fire({
+       position: 'center',
+       icon: 'success',
+       title: 'Data berhasil dihapus',
+       showConfirmButton: false,
+       timer: 1500
+     }).then((result) => {
+       window.location = '../view/data-user.php';
+     });
+     
+    </script>";
+}
 ?>
