@@ -94,23 +94,28 @@ require('../proses/koneksi.php');
                         <td><?php echo $d['alamat']; ?></td>
                         <td><?php echo $d['keterangan']; ?></td>
                         <td class="text-center">
-                            <button class="btn btn-sm btn-warning fa fa-pencil mr-2" title="Edit" data-bs-toggle="modal" data-bs-target="#dataSkpkEdit<?php echo $d['id_skpk']; ?>" value="<?php echo $d['id_skpk']; ?>"></button>
-                            <a href="proses/data-skpk-hapus?id=<?php echo $d['id_skpk']; ?>" onClick="return confirm('Apakah anda yakin menghapus data ini?')">
-                                <i class="btn btn-sm btn-danger fa fa-trash mr-2" title="Hapus"></i>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#data<?php echo $d['id_skpk']; ?>">
+                                <i class="fa fa-pencil"></i>&nbsp;
+                                    
+                                </button>
+                            <a class="btn btn-danger" href="../proses/data-skpk-hapus.php?id=<?php echo $d['id_skpk']; ?>" onClick="return confirm('Apakah anda yakin menghapus data ini: <?php echo $d['nama_skpk'];?> ?')">
+                                <i class="fa fa-trash" title="Hapus"></i>
                             </a>
                             <!-- Modal Edit Data -->
-                            <div class="modal fade" id="dataSkpkEdit<?php echo $d['id_skpk']; ?>" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                <form action="proses/data-skpk-edit?id=<?php echo $d['id_skpk']; ?>" method="POST">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header bg-custom">
-                                                <h5 class="modal-title text-white" id="staticBackdropLabel">
-                                                    Edit Data SKPK
-                                                </h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body bg-light">
-                                                <div class="mb-2">
+                            <div class="modal fade" id="data<?php echo $d['id_skpk']; ?>" role="dialog"
+                                data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Edit Data Jenis Paket</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            <form action="../proses/data-skpk-edit.php" method="POST">
+                             <div class="mb-2">
                                                     <input type="hidden" name="idSkpk" class="form-control" value="<?php echo $d['id_skpk']; ?>" readonly />
                                                 </div>
                                                 <div class="input-group mb-2">
@@ -119,7 +124,7 @@ require('../proses/koneksi.php');
                                                 </div>
                                                 <div class="input-group mb-2">
                                                     <span class="input-group-text col-4">Nama SKPK</span>
-                                                    <textarea rows="2" cols="" class="form-control" name="namaSkpk" id="namaSkpk" required><?php echo htmlspecialchars($d['nama_skpk']); ?></textarea>
+                                                    <input  class="form-control" name="namaSkpk" id="namaSkpk" required value="<?php echo $d['nama_skpk']; ?>">
                                                 </div>
                                                 <div class="input-group mb-2">
                                                     <span class="input-group-text col-4">Alamat</span>
@@ -129,14 +134,14 @@ require('../proses/koneksi.php');
                                                     <span class="input-group-text col-4">Keterangan</span>
                                                     <input type="text" class="form-control" name="keterangan" id="keterangan" value="<?php echo $d['keterangan']; ?>">
                                                 </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                <button type="submit" class="btn btn-primary">Update</button>
-                                            </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-reply"></i> Batal</button>
+                                            <button type="submit" class="btn btn-success"><i class="fa fa-send"></i> Simpan</button>
                                         </div>
-                                    </div>
-                                </form>
+                            </div>
+                            </form>
+                        </div>
+                               
                             </div>
                             <!-- End of Modal Edit Data -->
                         </td>
@@ -152,5 +157,5 @@ require('../proses/koneksi.php');
 </div>
 
 <?php
-include 'footer.php';
+require('../view/template-bawah-monev.php')
 ?>
