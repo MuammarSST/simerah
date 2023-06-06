@@ -38,8 +38,8 @@ if (!$result_laporan) {
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table">
-                      <thead class="text-primary">
+                    <table class="table table-bordered" id="myTable">
+                      <thead class="text-primary text-center">
                         <tr><th>
                         No
                         </th>
