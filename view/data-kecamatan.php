@@ -9,11 +9,11 @@ require('../proses/koneksi.php');
 
     <div class="container-fluid">
         <div class="title">
-            <h3 class="text-gray-800 my-2">Data Jenis Paket</h3>
+            <h3 class="text-gray-800 my-2">Data Kecamatan</h3>
         </div>
         <div class="subtitle border-bottom mb-4 pb-2">
             <span class=""><a href="index">Beranda </a></span>
-            <span class="text-grey"> / Data jenis paket</span>
+            <span class="text-grey"> / Data Kecamatan</span>
         </div>
 
             <!-- Button trigger modal -->
@@ -100,30 +100,33 @@ require('../proses/koneksi.php');
                         <td><?php echo $d['nama_kecamatan']; ?></td>
                         <td><?php echo $d['keterangan']; ?></td>
                         <td class="text-center">
-                            <button class="btn btn-sm btn-warning fa fa-pencil mr-2" title="Edit" data-bs-toggle="modal"
-                                data-bs-target="#dataKecamatanEdit<?php echo $d['id_kecamatan']; ?>"
-                                value="<?php echo $d['id_kecamatan']; ?>"></button>
+                            
+
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#dataJenisPaketEdit<?php echo $d['id_kecamatan']; ?>">
+                                <i class="fa fa-pencil"></i>&nbsp;
+                                    
+                                </button>
+
                             <a href="../proses/data-kecamatan-hapus.php?id=<?php echo $d['id_kecamatan']; ?>"
-                                onClick="return confirm('Apakah anda yakin menghapus data ini?')">
-                                <i class="btn btn-sm btn-danger fa fa-trash mr-2" title="Hapus"></i>
+                            class="btn btn-danger"
+                                onClick="return confirm('Apakah anda yakin menghapus data ini : <?php echo $d['nama_kecamatan'];?> ?')">
+                                <i class="fa fa-trash mr-2" title="Hapus"></i>
                             </a>
                             <!-- Modal Edit Data -->
-                            <div class="modal fade" id="dataKecamatanEdit<?php echo $d['id_kecamatan']; ?>"
-                                role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                            <div class="modal fade" id="dataJenisPaketEdit<?php echo $d['id_kecamatan']; ?>" role="dialog"
+                                data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                <form action="proses/data-kecamatan-edit?id=<?php echo $d['id_kecamatan']; ?>"
-                                    method="POST">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header bg-custom">
-                                                <h5 class="modal-title text-white" id="staticBackdropLabel">
-                                                    Edit Data Kecamatan
-                                                </h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body bg-light">
-                                                <div class="mb-2">
+                                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Edit Data Jenis Paket</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                             <form action="../proses/data-kecamatan-edit.php" method="POST">
+                             <div class="mb-2">
                                                     <input type="hidden" name="idKecamatan" class="form-control"
                                                         value="<?php echo $d['id_kecamatan']; ?>" readonly />
                                                 </div>
@@ -142,15 +145,16 @@ require('../proses/koneksi.php');
                                                     <input type="text" class="form-control" name="keterangan"
                                                         id="keterangan" value="<?php echo $d['keterangan']; ?>">
                                                 </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Batal</button>
-                                                <button type="submit" class="btn btn-primary">Update</button>
-                                            </div>
+                                    
+                            </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-reply"></i> Batal</button>
+                                            <button type="submit" class="btn btn-success"><i class="fa fa-send"></i> Simpan</button>
                                         </div>
-                                    </div>
-                                </form>
+                            </div>
+                            </form>
+                        </div>
+                               
                             </div>
                             <!-- End of Modal Edit Data -->
                         </td>
