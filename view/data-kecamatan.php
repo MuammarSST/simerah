@@ -102,7 +102,7 @@ require('../proses/koneksi.php');
                         <td class="text-center">
                             
 
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#dataJenisPaketEdit<?php echo $d['id_kecamatan']; ?>">
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#data<?php echo $d['id_kecamatan']; ?>">
                                 <i class="fa fa-pencil"></i>&nbsp;
                                     
                                 </button>
@@ -113,7 +113,7 @@ require('../proses/koneksi.php');
                                 <i class="fa fa-trash mr-2" title="Hapus"></i>
                             </a>
                             <!-- Modal Edit Data -->
-                            <div class="modal fade" id="dataJenisPaketEdit<?php echo $d['id_kecamatan']; ?>" role="dialog"
+                            <div class="modal fade" id="data<?php echo $d['id_kecamatan']; ?>" role="dialog"
                                 data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
