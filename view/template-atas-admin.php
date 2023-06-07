@@ -59,6 +59,13 @@ require_once('../view/header.php');
             </a>
           </li>
 
+          <li class="nav-item active ">
+            <a class="nav-link" href="./sumber-dana.php">
+              <i class="material-icons">paid</i>
+              <p>Sumber Dana</p>
+            </a>
+          </li>
+
           
         </ul>
       </div>
