@@ -13,6 +13,8 @@ $result_jenis_paket = mysqli_query($koneksi, $query_jenis_paket);
 if (!$result_jenis_paket) {
     die('Invalid query: ' . $mysqli->error);
 }
+$query_sumber_dana= "SELECT * FROM sumber_dana";
+$result_sumber_dana = mysqli_query($koneksi, $query_sumber_dana);
 ?>
 <?php
 
@@ -369,8 +371,23 @@ require('../view/template-atas-monev.php');
                         <input type="text" class="form-control" id="pf_pagu" name="pf_pagu" required>
                     </div>
                     <div class="col-12">
-                        <label for="pf_sumber_dana" class="form-label">8. Sumber Dana :</label>
-                        <input type="text" class="form-control" id="pf_sumber_dana" name="pf_sumber_dana" required>
+                        <label for="id_sumber_dana" class="form-label">8. Sumber Dana :</label>
+                        <select id="id_sumber_dana" name="id_sumber_dana" class="card" required>
+                                   
+                                        <option disabled selected required> --- Silahkan Pilih Sumber Dana ---</option>
+                                        <?php
+                                        $i = 0;
+                                        while ($row_sumber_dana = @mysqli_fetch_assoc($result_sumber_dana)) {
+
+                                            $id_sumber_dana = $row_sumber_dana['id_sumber_dana'];
+                                            $kode_sumber_dana = $row_sumber_dana['sumber_dana'];
+
+                                        ?>
+                                            <option value="<?php echo $id_sumber_dana; ?>"><?php echo $kode_sumber_dana; ?></option>
+                                        <?php
+                                            $i++;
+                                        } ?>
+                                    </select>
                     </div>
                 </div>
             </div>

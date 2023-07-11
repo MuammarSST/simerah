@@ -2,8 +2,12 @@
 require('../proses/koneksi.php');
 
 $post_id_paket = $_POST['id_paket'];
-$query = "SELECT laporan.*, skpk.nama_skpk, jenis_paket.* FROM laporan  LEFT JOIN skpk ON laporan.skpk_id=skpk.id_skpk 
-INNER JOIN jenis_paket ON laporan.jenis_paket=jenis_paket.id where laporan.id_paket = '$post_id_paket' ";
+$query = "SELECT laporan.*, skpk.nama_skpk,jenis_paket.*, sumber_dana.sumber_dana 
+FROM laporan  
+LEFT JOIN skpk ON laporan.skpk_id=skpk.id_skpk 
+INNER JOIN jenis_paket ON laporan.jenis_paket=jenis_paket.id
+INNER JOIN sumber_dana ON laporan.id_sumber_dana=sumber_dana.id_sumber_dana
+where laporan.id_paket = '$post_id_paket' ";
 $result = mysqli_query($koneksi,$query);
 $row = mysqli_fetch_array($result);
 
@@ -71,13 +75,13 @@ include 'header.php';
                     <button class="btn btn-primary" onclick="generatePDF()">
                           <i class="fa fa-download"></i> Download PDF
                     </button>
-                    <button  class="btn btn-success" onclick="ExportToExcel('xlsx')">
-                    <i class="fa fa-file-excel-o"></i> Dowload Excel (masih error)
-                </button>
-                <form method="POST" action="../proses/rincian_export_excel.php" >
+                    <!-- <button  class="btn btn-success" onclick="ExportToExcel('xlsx')">
+                       <i class="fa fa-file-excel-o"></i> Dowload Excel (masih error)
+                    </button> -->
+                <!-- <form method="POST" action="../proses/rincian_export_excel.php" >
 					<input type="hidden" name="id_paket" value="<?php echo $post_id_paket ?>">
 					<button type="submit" name="submit"  class ="btn btn-success"><i class="fa fa-file-excel-o"></i> export excel (masih error)</button>
-				</form>
+				</form> -->
                 </div>
                 <div class="col-sm">
                 </div>
@@ -374,7 +378,7 @@ include 'header.php';
 
 
                         <th>8. Sumber Dana</th>
-                        <td colspan="4"><?php echo $row['pf_nilai_kontrak'];?></td>
+                        <td colspan="4"><?php echo $row['sumber_dana'];?></td>
 
                     </tr>
                     <tr class="text-center" style="background: #D9D9D9;">

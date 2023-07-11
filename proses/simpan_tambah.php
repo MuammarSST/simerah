@@ -74,7 +74,7 @@ if(isset($_POST['submit'])){
         $pf_nilai_kontrak = $_POST['pf_nilai_kontrak'];
         $pf_tanggal = $_POST['pf_tanggal'];
         $pf_pagu = $_POST['pf_pagu'];
-        $pf_sumber_dana = $_POST['pf_sumber_dana'];
+      
 
         $no_pho = $_POST['no_pho'];
         $tgl_pho = $_POST['tgl_pho'];
@@ -83,9 +83,10 @@ if(isset($_POST['submit'])){
 
         $id_user = $_POST['id_user'];
         $id_tahun = $_POST['id_tahun'];
+        $id_sumber_dana=$_POST['id_sumber_dana'];
 
 
-        $query = "INSERT INTO laporan (`nama_paket`, `alamat_paket`, `latitude`, `longitude`, `skpk_id`, `kpa`, `alamat_skpk`, `nama_pa`, `nama_bendahara`, `nama_pptk`, `pl_nama_1`, `pl_instasi_asal_1`, `pl_nama_2`, `pl_instasi_asal_2`, `pl_nama_3`, `pl_instasi_asal_3`, `pl_nama_4`, `pl_instasi_asal_4`, `pl_nama_5`, `pl_instasi_asal_5`, `nama`, `jabatan`, `alamat`, `pho_nama_1`, `pho_instasi_asal_1`, `pho_nama_2`, `pho_instasi_asal_2`, `pho_nama_3`, `pho_instasi_asal_3`, `pho_nama_4`, `pho_instasi_asal_4`, `pho_nama_5`, `pho_instasi_asal_5`, `pho_nama_6`, `pho_instasi_asal_6`, `pr_nama_perusahaan`, `pr_alamat_perusahaan`, `pr_nama_pimpinan`, `pr_alamat_pimpinan`, `pr_nilai_kontrak`, `pw_nama_perusahaan`, `pw_alamat_perusahaan`, `pw_nama_pimpinan`, `pw_alamat_pimpinan`, `pw_nilai_kontrak`, `pf_nama_perusahaan`, `pf_alamat_perusahaan`, `pf_nama_pimpinan`, `pf_nomor_kontrak`, `pf_nilai_kontrak`, `pf_tanggal`, `pf_pagu`, `pf_sumber_dana`, `no_pho`, `tgl_pho`, `ha`,`jenis_paket`,`id_user`,`id_tahun`)
+        $query = "INSERT INTO laporan (`nama_paket`, `alamat_paket`, `latitude`, `longitude`, `skpk_id`, `kpa`, `alamat_skpk`, `nama_pa`, `nama_bendahara`, `nama_pptk`, `pl_nama_1`, `pl_instasi_asal_1`, `pl_nama_2`, `pl_instasi_asal_2`, `pl_nama_3`, `pl_instasi_asal_3`, `pl_nama_4`, `pl_instasi_asal_4`, `pl_nama_5`, `pl_instasi_asal_5`, `nama`, `jabatan`, `alamat`, `pho_nama_1`, `pho_instasi_asal_1`, `pho_nama_2`, `pho_instasi_asal_2`, `pho_nama_3`, `pho_instasi_asal_3`, `pho_nama_4`, `pho_instasi_asal_4`, `pho_nama_5`, `pho_instasi_asal_5`, `pho_nama_6`, `pho_instasi_asal_6`, `pr_nama_perusahaan`, `pr_alamat_perusahaan`, `pr_nama_pimpinan`, `pr_alamat_pimpinan`, `pr_nilai_kontrak`, `pw_nama_perusahaan`, `pw_alamat_perusahaan`, `pw_nama_pimpinan`, `pw_alamat_pimpinan`, `pw_nilai_kontrak`, `pf_nama_perusahaan`, `pf_alamat_perusahaan`, `pf_nama_pimpinan`, `pf_nomor_kontrak`, `pf_nilai_kontrak`, `pf_tanggal`, `pf_pagu`, `no_pho`, `tgl_pho`, `ha`,`jenis_paket`,`id_user`,`id_tahun`,`id_sumber_dana`)
                     VALUES (
                     '$nama_paket',
                     '$alamat_paket',
@@ -139,13 +140,14 @@ if(isset($_POST['submit'])){
                     '$pf_nilai_kontrak',
                     '$pf_tanggal',
                     '$pf_pagu',
-                    '$pf_sumber_dana',
+                   
                     '$no_pho',
                     '$tgl_pho',
                     '$ha',
                     '$jenis_paket',
                     '$id_user',
-                    '$id_tahun'
+                    '$id_tahun',
+                    '$id_sumber_dana'
                     )";
 
 

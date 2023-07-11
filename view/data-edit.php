@@ -6,8 +6,11 @@ require('../proses/koneksi.php');
 
 $post_id_paket = $_POST['id_paket'];
 
-$query = "SELECT laporan.*, skpk.nama_skpk,jenis_paket.* FROM laporan  LEFT JOIN skpk ON laporan.skpk_id=skpk.id_skpk 
+$query = "SELECT laporan.*, skpk.nama_skpk,jenis_paket.*, sumber_dana.sumber_dana 
+FROM laporan  
+LEFT JOIN skpk ON laporan.skpk_id=skpk.id_skpk 
 INNER JOIN jenis_paket ON laporan.jenis_paket=jenis_paket.id
+INNER JOIN sumber_dana ON laporan.id_sumber_dana=sumber_dana.id_sumber_dana
 where laporan.id_paket = '$post_id_paket' ";
 $result = mysqli_query($koneksi,$query);
 $row = mysqli_fetch_array($result);
@@ -17,6 +20,8 @@ $result_jenis_paket = mysqli_query($koneksi, $query_jenis_paket);
 if (!$result_jenis_paket) {
     die('Invalid query: ' . $mysqli->error);
 }
+$query_sumber_dana= "SELECT * FROM sumber_dana";
+$result_sumber_dana = mysqli_query($koneksi, $query_sumber_dana);
 ?>
 
         <div class="container-fluid">
@@ -442,9 +447,26 @@ if (!$result_jenis_paket) {
                                     value="<?php echo $row['pf_pagu']; ?>" required>
                             </div>
                             <div class="col-12">
-                                <label for="pf_sumber_dana" class="form-label">8. Sumber Dana :</label>
-                                <input type="text" class="form-control" id="pf_sumber_dana" name="pf_sumber_dana"
-                                    value="<?php echo $row['pf_sumber_dana']; ?>" required>
+                                <label for="id_sumber_dana" class="form-label">8. Sumber Dana :</label>
+                                
+                                    <select id="id_sumber_dana" name="id_sumber_dana" class="card" required>
+                                    <option value="<?php echo $row['id_sumber_dana']; ?>" selected>
+                                                    <?php echo $row['sumber_dana'];?>
+                                                </option>
+                                                <option disabled> --- Pilih Jenis Paket ---</option>
+                                        <?php
+                                        $i = 0;
+                                        while ($row_sumber_dana = @mysqli_fetch_assoc($result_sumber_dana)) {
+
+                                            $id_sumber_dana = $row_sumber_dana['id_sumber_dana'];
+                                            $kode_sumber_dana = $row_sumber_dana['sumber_dana'];
+
+                                        ?>
+                                            <option value="<?php echo $id_sumber_dana; ?>"><?php echo $kode_sumber_dana; ?></option>
+                                        <?php
+                                            $i++;
+                                        } ?>
+                                    </select>
                             </div>
                         </div>
                     </div>
@@ -481,6 +503,8 @@ if (!$result_jenis_paket) {
 
                         </div>
                     </div>
+                    <input type="hidden" class="form-control" id="id_user" name="id_user" value="<?php echo $id_user; ?>">
+                    <input type="hidden" class="form-control" id="id_tahun" name="id_tahun" value="<?php echo $id_tahun; ?>">
                     <div class="d-flex justify-content-end mb-4 mx-4">
                         <a href="./monev.php" class="btn btn-danger mx-2"><i class="fa fa-reply"></i> Kembali </a>
                         <button type="submit" name="submit" class="btn btn-success px-4"><i class="fa fa-save"></i> Simpan</button>

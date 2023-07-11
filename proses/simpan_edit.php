@@ -78,7 +78,7 @@ if(isset($_POST['submit'])){
     $pf_nilai_kontrak = $_POST['pf_nilai_kontrak'];
     $pf_tanggal = $_POST['pf_tanggal'];
     $pf_pagu = $_POST['pf_pagu'];
-    $pf_sumber_dana = $_POST['pf_sumber_dana'];
+   
 
     $no_pho = $_POST['no_pho'];
     $tgl_pho = $_POST['tgl_pho'];
@@ -86,6 +86,7 @@ if(isset($_POST['submit'])){
     $ha = $_POST['ha'];
     $id_user = $_POST['id_user'];
     $id_tahun = $_POST['id_tahun'];
+    $id_sumber_dana=$_POST['id_sumber_dana'];
 
     $query = "UPDATE laporan SET 
         nama_paket = '$nama_paket',
@@ -140,13 +141,14 @@ if(isset($_POST['submit'])){
         pf_nilai_kontrak = '$pf_nilai_kontrak',
         pf_tanggal = '$pf_tanggal',
         pf_pagu = '$pf_pagu',
-        pf_sumber_dana = '$pf_sumber_dana',
+      
         no_pho = '$no_pho',
         tgl_pho = '$tgl_pho',
         ha =  '$ha',
         jenis_paket ='$jenis_paket',
         id_user = '$id_user',
-        id_tahun = '$id_tahun'
+        id_tahun = '$id_tahun',
+        id_sumber_dana='$id_sumber_dana'
     WHERE id_paket = '$id_paket'";
     // var_dump($query);
     $result = mysqli_query($koneksi,$query);
