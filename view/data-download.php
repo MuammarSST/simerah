@@ -75,13 +75,7 @@ include 'header.php';
                     <button class="btn btn-primary" onclick="generatePDF()">
                           <i class="fa fa-download"></i> Download PDF
                     </button>
-                    <!-- <button  class="btn btn-success" onclick="ExportToExcel('xlsx')">
-                       <i class="fa fa-file-excel-o"></i> Dowload Excel (masih error)
-                    </button> -->
-                <!-- <form method="POST" action="../proses/rincian_export_excel.php" >
-					<input type="hidden" name="id_paket" value="<?php echo $post_id_paket ?>">
-					<button type="submit" name="submit"  class ="btn btn-success"><i class="fa fa-file-excel-o"></i> export excel (masih error)</button>
-				</form> -->
+
                 </div>
                 <div class="col-sm">
                 </div>

@@ -24,16 +24,7 @@ $row = mysqli_fetch_array($result);
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
-    <script>
-        function ExportToExcel(type, fn, dl) {
-       var elt = document.getElementById('container_content');
-       var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
-       return dl ?
-         XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }):
-         XLSX.writeFile(wb, fn || ('LAPORAN.' + (type || 'xlsx')));
-    }
-    </script>
+
     <script>
     function generatePDF() {
         const element = document.getElementById('container_content');
@@ -76,13 +67,7 @@ include 'header.php';
                     <button class="btn btn-primary" onclick="generatePDF()">
                           <i class="fa fa-download"></i> Download PDF
                     </button>
-                    <!-- <button  class="btn btn-success" onclick="ExportToExcel('xlsx')">
-                       <i class="fa fa-file-excel-o"></i> Dowload Excel (masih error)
-                    </button> -->
-                <!-- <form method="POST" action="../proses/rincian_export_excel.php" >
-					<input type="hidden" name="id_paket" value="<?php echo $post_id_paket ?>">
-					<button type="submit" name="submit"  class ="btn btn-success"><i class="fa fa-file-excel-o"></i> export excel (masih error)</button>
-				</form> -->
+  
                 </div>
                 <div class="col-sm">
                 </div>
