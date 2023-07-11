@@ -26,7 +26,8 @@ if (!$result_laporan) {
         </div>
         
         <a href="data-tambah.php" class="btn btn-danger shadow"> <i class="fa fa-plus"></i></button> Tambah Data</a>
-     
+        <a href="data-download.php" class="btn btn-danger shadow"> <i class="fa fa-download"></i></button> Download Data</a>
+
         <div class="content">
         <div class="container-fluid">
           <div class="row">
@@ -79,6 +80,7 @@ if (!$result_laporan) {
                         
                         <form method="POST" action="data-rincian.php">
                                     <input type="hidden" name="id_paket" value="<?php echo $id_paket ?>">
+                                    <input type="hidden" name="no_urut" value="<?php echo $noUrut-1 ?>">
                                     <button type="submit" name="edit_paket"
                                         class="btn btn-info " title="Rincian Data">
                                         <i class="fa fa-search"></i>

@@ -1,16 +1,15 @@
 <?php
 require('../proses/koneksi.php');
 
-$post_id_paket = $_POST['id_paket'];
-$no_urut=$_POST['no_urut'];
+
 $query = "SELECT laporan.*, skpk.nama_skpk,jenis_paket.*, sumber_dana.sumber_dana 
 FROM laporan  
 LEFT JOIN skpk ON laporan.skpk_id=skpk.id_skpk 
 INNER JOIN jenis_paket ON laporan.jenis_paket=jenis_paket.id
 INNER JOIN sumber_dana ON laporan.id_sumber_dana=sumber_dana.id_sumber_dana
-where laporan.id_paket = '$post_id_paket' ";
+ ";
 $result = mysqli_query($koneksi,$query);
-$row = mysqli_fetch_array($result);
+
 
 ?>
 <!DOCTYPE html>
@@ -39,7 +38,7 @@ $row = mysqli_fetch_array($result);
         const element = document.getElementById('container_content');
         var opt = {
             margin: 0.1,
-            filename: '<?php echo $row['nama_skpk'];?> - <?php echo $row['nama_paket']; ?>.pdf',
+            filename: 'Download.pdf',
           
 
 
@@ -91,7 +90,12 @@ include 'header.php';
 
         <br>
 
-     
+        <?php 
+				$i=0;
+                $noUrut=1;
+				while ($row = mysqli_fetch_array($result)){
+                    $i++;
+                    ?>    
             <table class="table table-bordered" id="container_content" >
                 <thead>
                     <tr class="text-center">
@@ -99,7 +103,7 @@ include 'header.php';
                         <th colspan="3" style="background: #C6E0B4;">LAPORAN HASIL MONITORING DAN EVALUASI TEPRA PIDIE
                             TAHUN 2022</th>
                         <th colspan="2" style="background: #B4C6E7;">FUNGSI</th>
-                        <th rowspan="2" style="background: #C6E0B4;"><?php echo $no_urut ?></th>
+                        <th rowspan="2" style="background: #C6E0B4;"><?php echo $noUrut++ ?></th>
 
 
                     </tr>
@@ -402,7 +406,10 @@ include 'header.php';
 
                 </tbody>
             </table>
-      
+            <?php 
+					}
+				?>
+
 
     <?php
 include 'footer.php';
