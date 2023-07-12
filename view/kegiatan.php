@@ -59,7 +59,7 @@ require('../proses/koneksi.php');
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-danger">
-                  <h4 class="card-title "> KEGITAN</h4>
+                  <h4 class="card-title "> KEGIATAN</h4>
                   <p class="card-category"> </p>
                 </div>
           <div class="card-body">
