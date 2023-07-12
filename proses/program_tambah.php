@@ -12,7 +12,7 @@ include ('koneksi.php');
 $KODE_PROGRAM = $_POST['KODE_PROGRAM'];
 $NAMA_PROGRAM = $_POST['NAMA_PROGRAM'];
 
-$result = mysqli_query($koneksi,"INSERT INTO sumber_dana VALUES ('', '$KODE_PROGRAM','$NAMA_PROGRAM')");
+$result = mysqli_query($koneksi,"INSERT INTO program VALUES ('', '$KODE_PROGRAM','$NAMA_PROGRAM')");
 
 
 if($result){

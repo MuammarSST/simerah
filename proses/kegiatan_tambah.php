@@ -12,7 +12,7 @@ include ('koneksi.php');
 $KODE_KEGIATAN = $_POST['KODE_KEGIATAN'];
 $NAMA_KEGIATAN = $_POST['NAMA_KEGIATAN'];
 
-$result = mysqli_query($koneksi,"INSERT INTO sumber_dana VALUES ('', '$KODE_KEGIATAN','$NAMA_KEGIATAN')");
+$result = mysqli_query($koneksi,"INSERT INTO kegiatan VALUES ('', '$KODE_KEGIATAN','$NAMA_KEGIATAN')");
 
 
 if($result){

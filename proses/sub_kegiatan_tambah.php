@@ -9,10 +9,10 @@
 session_start();
 include ('koneksi.php');
 
-$KODE_KEGIATAN = $_POST['KODE_KEGIATAN'];
-$NAMA_KEGIATAN = $_POST['NAMA_KEGIATAN'];
+$KODE_SUB_KEGIATAN = $_POST['KODE_SUB_KEGIATAN'];
+$NAMA_SUB_KEGIATAN = $_POST['NAMA_SUB_KEGIATAN'];
 
-$result = mysqli_query($koneksi,"INSERT INTO sumber_dana VALUES ('', '$KODE_KEGIATAN','$NAMA_KEGIATAN')");
+$result = mysqli_query($koneksi,"INSERT INTO sub_kegiatan VALUES ('', '$KODE_SUB_KEGIATAN','$NAMA_SUB_KEGIATAN')");
 
 
 if($result){
@@ -24,7 +24,7 @@ if($result){
        showConfirmButton: false,
        timer: 1500
      }).then((result) => {
-       window.location = '../view/kegiatan.php';
+       window.location = '../view/sub_kegiatan.php';
      });
      
     </script>";
