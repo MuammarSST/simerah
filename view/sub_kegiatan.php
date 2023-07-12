@@ -33,10 +33,15 @@ require('../proses/koneksi.php');
                         </button>
                     </div>
                     <div class="modal-body">
-                    <form action="../proses/SUB KEGIATAN_tambah.php" method="POST">
+                    <form action="../proses/sub_kegiatan_tambah.php" method="POST">
                         <div class="input-group mb-3">
+                                <span class="input-group-text col-4">KODE SUB KEGIATAN</span>
+                                <input type="text" class="form-control" name="KODE_SUB_KEGIATAN" id="KODE_SUB_KEGIATAN" required
+                                    placeholder="">
+                            </div>
+                            <div class="input-group mb-3">
                                 <span class="input-group-text col-4">NAMA SUB KEGIATAN</span>
-                                <input type="text" class="form-control" name="NAMA_SUB KEGIATAN" id="NAMA_SUB KEGIATAN" required
+                                <input type="text" class="form-control" name="NAMA_SUB_KEGIATAN" id="NAMA_SUB_KEGIATAN" required
                                     placeholder="">
                             </div>
 

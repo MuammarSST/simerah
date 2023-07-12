@@ -35,8 +35,13 @@ require('../proses/koneksi.php');
                     <div class="modal-body">
                     <form action="../proses/program_tambah.php" method="POST">
                         <div class="input-group mb-3">
-                                <span class="input-group-text col-4">Program</span>
-                                <input type="text" class="form-control" name="tahun" id="tahun" required
+                                <span class="input-group-text col-4">KODE PROGRAM</span>
+                                <input type="text" class="form-control" name="KODE_PROGRAM" id="KODE_PROGRAM" required
+                                    placeholder="">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text col-4">NAMA PROGRAM</span>
+                                <input type="text" class="form-control" name="NAMA PROGRAM" id="NAMA_PROGRAM" required
                                     placeholder="">
                             </div>
 
