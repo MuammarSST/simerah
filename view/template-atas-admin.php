@@ -65,6 +65,24 @@ require_once('../view/header.php');
               <p>Sumber Dana</p>
             </a>
           </li>
+          <li class="nav-item active ">
+            <a class="nav-link" href="./program.php">
+              <i class="material-icons">book</i>
+              <p>Program</p>
+            </a>
+          </li>
+          <li class="nav-item active ">
+            <a class="nav-link" href="./kegiatan.php">
+              <i class="material-icons">lan</i>
+              <p>Kegiatan</p>
+            </a>
+          </li>
+          <li class="nav-item active ">
+            <a class="nav-link" href="./sub_kegiatan.php">
+              <i class="material-icons">assignment</i>
+              <p>Sub Kegiatan</p>
+            </a>
+          </li>
 
           
         </ul>

@@ -33,7 +33,7 @@ require('../proses/koneksi.php');
                         </button>
                     </div>
                     <div class="modal-body">
-                    <form action="../proses/data-tahun-tambah.php" method="POST">
+                    <form action="../proses/sumber_dana_tambah.php" method="POST">
                         <div class="input-group mb-3">
                                 <span class="input-group-text col-4">Sumber Dana</span>
                                 <input type="text" class="form-control" name="sumber_dana" id="sumber_dana" required
@@ -106,7 +106,7 @@ require('../proses/koneksi.php');
                                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Edit Data Tahun</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Edit Sumber Dana</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
@@ -118,9 +118,9 @@ require('../proses/koneksi.php');
                                                         value="<?php echo $d['id_sumber_dana']; ?>" readonly />
                                                 </div>
                                                 <div class="input-group mb-2">
-                                                    <span class="input-group-text col-4">Tahun</span>
+                                                    <span class="input-group-text col-4">Sumber Dana</span>
                                                     <input type="text" class="form-control" name="sumber_dana"
-                                                        id="tahun" value="<?php echo $d['sumber_dana']; ?>">
+                                                        id="sumber_dana" value="<?php echo $d['sumber_dana']; ?>">
                                                 </div>
                                                
                                     
